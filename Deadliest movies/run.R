@@ -265,8 +265,8 @@ print(graph);
 #' 
 #' #### 4 - Source code ####
 #' 
-#' R source code is available [here](code/code.R.zip).
+#' R and Python source codes are available
+#' [here](https://github.com/morpionZ/R-vs-Python/tree/master/Deadliest%20movies/code).
 #' 
-#' Python source code is available [here](code/code.py.zip).
 
 
