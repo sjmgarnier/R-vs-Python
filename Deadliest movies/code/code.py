@@ -24,7 +24,8 @@ from pandas import *
 body_count_data = read_csv("http://files.figshare.com/1332945/film_death_counts.csv")
 
 # Divide the body counts by the length of the film
-body_count_data["Deaths_Per_Minute"] = body_count_data["Body_Count"].apply(float).values / body_count_data["Length_Minutes"].values
+body_count_data["Deaths_Per_Minute"] = (body_count_data["Body_Count"].apply(float).values /
+                                            body_count_data["Length_Minutes"].values)
 
 # Only keep the top 25 highest kills per minute films
 body_count_data = body_count_data.sort("Deaths_Per_Minute", ascending=False)[:25]
@@ -45,14 +46,27 @@ ax.xaxis.tick_bottom()data["Full_Title"] = array(full_title)
 fig = plt.figure(figsize=(8,12))
 
 # Plot the red horizontal bars
-rects = plt.barh(range(len(body_count_data["Deaths_Per_Minute"])), body_count_data["Deaths_Per_Minute"], height=0.8, align="center", color="#8A0707", edgecolor="none")
+rects = plt.barh(range(len(body_count_data["Deaths_Per_Minute"])),
+                    body_count_data["Deaths_Per_Minute"],
+                    height=0.8,
+                    align="center",
+                    color="#8A0707",
+                    edgecolor="none")
 
 # This function adds the deaths per minute label to the right of the bars
 def autolabel(rects):
     for i, rect in enumerate(rects):
         width = rect.get_width()
-        label_text = str(round(float(width), 2)) + " (" + str(body_count_data["Length_Minutes"].values[i]) + " mins)"
-        plt.text(width + 0.25, rect.get_y() + rect.get_height() / 2., label_text, ha="left", va="center", fontsize=14)
+        label_text = (str(round(float(width), 2)) +
+                        " (" + str(body_count_data["Length_Minutes"].values[i]) +
+                        " mins)")
+        
+        plt.text(width + 0.25,
+                    rect.get_y() + rect.get_height() / 2.,
+                    label_text,
+                    ha="left",
+                    va="center",
+                    fontsize=14)
 
 autolabel(rects)
 
