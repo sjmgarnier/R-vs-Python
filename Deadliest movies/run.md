@@ -2,7 +2,6 @@
 
 
 
-
 **Document title:** R vs Python - Round 1
 
 **Date:** January 5, 2014
@@ -90,7 +89,7 @@ address:
 [http://dx.doi.org/10.6084/m9.figshare.889719](http://dx.doi.org/10.6084/m9.figshare.889719).
 
 
-
+g
 ```r
 # Load data into a data frame
 body.count.data <- read.csv("http://files.figshare.com/1332945/film_death_counts.csv")
@@ -163,7 +162,6 @@ body.count.data <- within(body.count.data, {
 ```
 
 ```python
-# generate the full titles for the movies: movie name (year)
 # Generate the full titles for the movies: movie name (year)
 full_title = []
 
@@ -255,8 +253,6 @@ ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["bottom"].set_visible(False)
-
-# Only show
 
 # Color the y-axis ticks the same dark red color, and the x-axis ticks white
 ax.tick_params(axis="y", color="#8A0707")
