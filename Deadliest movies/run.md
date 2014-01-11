@@ -1,3 +1,8 @@
+
+
+
+
+
 **Document title:** R vs Python - Round 1
 
 **Date:** January 5, 2014
@@ -13,9 +18,11 @@
 ([www.randalolson.com](http://www.randalolson.com) /
 [\@randal_olson](http://twitter.com/randal_olson))
 
-Document generated with RStudio ([www.rstudio.com](http://www.rstudio.com)),
-knitr ([www.yihui.name/knitr/](http://yihui.name/knitr/)) and pandoc
-([www.johnmacfarlane.net/pandoc/](http://johnmacfarlane.net/pandoc/)). Python figures generated with iPython Notebook ([www.ipython.org/notebook.html](http://ipython.org/notebook.html)).
+Document generated with RStudio ([www.rstudio.com](http://www.rstudio.com)), 
+knitr ([www.yihui.name/knitr/](http://yihui.name/knitr/)) and pandoc 
+([www.johnmacfarlane.net/pandoc/](http://johnmacfarlane.net/pandoc/)). Python
+figures generated with iPython Notebook
+([www.ipython.org/notebook.html](http://ipython.org/notebook.html)).
 
 ___
 
@@ -63,11 +70,14 @@ necessary libraries.
 
 ```r
 # Load libraries
-library(lattice);       # Very versatile graphics package
-library(latticeExtra);  # Addition to "lattice" that makes layering graphs a breathe, and I'm a lazy person, so why not
+library(lattice)        # Very versatile graphics package
+library(latticeExtra)   # Addition to "lattice" that makes layering graphs a 
+                        # breathe, and I'm a lazy person, so why not
 ```
 
 ```python
+# This starts the IPython Notebook pylab module, useful for plotting and
+# interactive scientific computing
 %pylab inline
 from pandas import *
 ```
@@ -75,7 +85,7 @@ from pandas import *
 
 Now let's load the data for today's job. The raw data were scraped by Randy 
 (using Python) from [www.MovieBodyCounts.com](http://www.MovieBodyCounts.com)
-and he generously provided the result of his hard work on FigShare at this
+and he generously provided the result of his hard work on FigShare at this 
 address: 
 [http://dx.doi.org/10.6084/m9.figshare.889719](http://dx.doi.org/10.6084/m9.figshare.889719).
 
@@ -83,11 +93,11 @@ address:
 
 ```r
 # Load data into a data frame
-body.count.data = read.csv('http://files.figshare.com/1332945/film_death_counts.csv');
+body.count.data <- read.csv('http://files.figshare.com/1332945/film_death_counts.csv')
 ```
 
 ```python
-# Read the data into a data frame
+# Read the data into a pandas DataFrame
 body_count_data = read_csv("http://files.figshare.com/1332945/film_death_counts.csv")
 ```
 
@@ -101,11 +111,16 @@ screen deaths per minute of each movie ("Deaths_Per_Minute")
 
 ```r
 # Compute on screen deaths per minute for each movie. 
-body.count.data$Deaths_Per_Minute = body.count.data$Body_Count / body.count.data$Length_Minutes;
+body.count.data <- within(body.count.data, { 
+  Deaths_Per_Minute <- Body_Count / Length_Minutes
+  ord <- order(Deaths_Per_Minute, decreasing = TRUE)  # useful later
+})
 ```
 
 ```python
-body_count_data["Deaths_Per_Minute"] = body_count_data["Body_Count"].apply(float).values / body_count_data["Length_Minutes"].values
+# Divide the body counts by the length of the film
+body_count_data["Deaths_Per_Minute"] = (body_count_data["Body_Count"].apply(float).values /
+                                          body_count_data["Length_Minutes"].values)
 ```
 
 
@@ -116,14 +131,17 @@ per minute, and select the top 25 most violent movies according to this criterio
 
 ```r
 # Reorder "body.count.data" by (descending) number of on screen deaths per minute
-body.count.data = body.count.data[order(-body.count.data$Deaths_Per_Minute), ];
+body.count.data <- body.count.data[body.count.data$ord, ]
 
 # Select top 25 most violent movies by number of on screen deaths per minute
-body.count.data = body.count.data[1:25,];
+body.count.data <- body.count.data[1:25,]
 ```
 
 ```python
+# Only keep the top 25 highest kills per minute films
 body_count_data = body_count_data.sort("Deaths_Per_Minute", ascending=False)[:25]
+
+# Change the order of the data so highest kills per minute films are on top in the plot
 body_count_data = body_count_data.sort("Deaths_Per_Minute", ascending=True)
 ```
 
@@ -135,19 +153,26 @@ will now generate the full title for each movie following a "Movie name
 
 
 ```r
-# Combine film title and release date into a new factor column with levels ordered by ascending violence
-Full_Title = paste(body.count.data$Film, ' (', body.count.data$Year, ')', sep='');
-body.count.data$Full_Title = factor(Full_Title, levels = Full_Title[length(Full_Title):1], ordered = TRUE);
+# Combine film title and release date into a new factor column with levels
+# ordered by ascending violence
+body.count.data <- within(body.count.data, {
+  Full_Title <- paste0(Film, ' (', Year, ')')
+  ord <- order(Deaths_Per_Minute, decreasing = TRUE)
+  Full_Title <- ordered(Full_Title, levels = rev(unique(Full_Title[ord])))  # some films are duplicated! Bad Randy!
+})
 ```
 
 ```python
 # generate the full titles for the movies: movie name (year)
+# Generate the full titles for the movies: movie name (year)
 full_title = []
 
 for film, year in zip(body_count_data["Film"].values, body_count_data["Year"].values):
   full_title.append(film + " (" + str(year) + ")")
 
-body_count_data["Full_Title"] = array(full_title)
+body_count_ y-axis ticks on the left and x-axis ticks on the bottom
+ax.yaxis.tick_left()
+ax.xaxis.tick_bottom()data["Full_Title"] = array(full_title)
 ```
 
 
@@ -158,8 +183,8 @@ default options and then we will make this thing look pretty.
 
 ```r
 # Generate base graph
-graph = barchart(Full_Title ~ Deaths_Per_Minute, data = body.count.data);
-print(graph);
+graph <- barchart(Full_Title ~ Deaths_Per_Minute, data = body.count.data)
+print(graph)
 ```
 
 <img src="figure/baseGraphR.png" title="plot of chunk baseGraphR" alt="plot of chunk baseGraphR" style="display: block; margin: auto;" />
@@ -167,8 +192,17 @@ print(graph);
 ```python
 # plot the bars
 fig = plt.figure(figsize=(8,12))
-rects = plt.barh(range(len(body_count_data["Deaths_Per_Minute"])), body_count_data["Deaths_Per_Minute"], height=0.8, align="center", color="#8A0707", edgecolor="none")
-yticks(range(len(body_count_data["Full_Title"])), body_count_data["Full_Title"].values, fontsize=14)
+
+# Plot the red horizontal bars
+rects = plt.barh(range(len(body_count_data["Deaths_Per_Minute"])),
+                 body_count_data["Deaths_Per_Minute"],
+                 height=0.8,
+                 align="center",
+                 color="#8A0707",
+                 edgecolor="none")
+
+# Add the film labels to left of the bars (y-axis)
+yticks(range(len(body_count_data["Full_Title"])), body_count_data["Full_Title"].values, fontsize=14)xticks(arange(0, 5, 1), [""])
 ```
 
 
@@ -180,43 +214,55 @@ Ok, now let's make this pretty.
 
 ```r
 # Create theme
-my.bloody.theme = trellis.par.get();                    # Intialize theme with default value
-my.bloody.theme$axis.line$col = NA;                       # Remove axes 
-my.bloody.theme$plot.polygon$col = '#8A0606';             # Set bar colors to a nice bloody red
-my.bloody.theme$plot.polygon$border = NA;                 # Remove bars' outline
-my.bloody.theme$axis.text$cex = 1;                        # Default axis text size is a bit small. Make it bigger
-my.bloody.theme$layout.heights$bottom.padding = 0;        # Remove bottom padding
-my.bloody.theme$layout.heights$axis.bottom = 0;           # Remove axis padding at the bottom of the graph
-my.bloody.theme$layout.heights$axis.top = 0;              # Remove axis padding at the top of the graph
+my.bloody.theme <- within(trellis.par.get(), {    # Initialize theme with default value
+  axis.line$col <- NA                             # Remove axes 
+  plot.polygon <- within(plot.polygon, {
+    col <- '#8A0606'                              # Set bar colors to a nice bloody red
+    border <- NA                                  # Remove bars' outline
+  })
+  axis.text$cex <- 1                              # Default axis text size is a bit small. Make it bigger
+  layout.heights <- within(layout.heights, {
+    bottom.padding <- 0                           # Remove bottom padding
+    axis.bottom <- 0                              # Remove axis padding at the bottom of the graph
+    axis.top <- 0                                 # Remove axis padding at the top of the graph
+  })
+})
 
 # Update figure with new theme + other improvements (like a title for instance)
-graph = update(graph, 
-       main='25 most violence packed films by deaths per minute',     # Title of the barchart
-       par.settings = my.bloody.theme,                                # Use custom theme
-       xlab = NULL,                                                   # Remove label of x axis
-       scales=list(x=list(at=NULL)),                                 # Remove rest of x axis
-       xlim = c(0, 6.7),                                              # Set graph limits along x axis to accomodate the additional text (requires some trial and error)
-       box.width=0.75);                                               # Default bar width is a bit small. Make it bigger)
+graph <- update(
+  graph, 
+  main='25 most violence packed films by deaths per minute',    # Title of the barchart
+  par.settings = my.bloody.theme,                               # Use custom theme
+  xlab = NULL,                                                  # Remove label of x axis
+  scales=list(x=list(at=NULL)),                                 # Remove rest of x axis
+  xlim = c(0, 6.7),                                             # Set graph limits along x axis to accomodate the additional text (requires some trial and error)
+  box.width=0.75)                                               # Default bar width is a bit small. Make it bigger)
 
-print(graph);
+print(graph)
 ```
 
 <img src="figure/prettyR.png" title="plot of chunk prettyR" alt="plot of chunk prettyR" style="display: block; margin: auto;" />
 
 ```python
-# plot styling
-yticks(range(len(body_count_data["Full_Title"])), body_count_data["Full_Title"].values, fontsize=14)
+# Don't have any x tick labels
 xticks(arange(0, 5, 1), [""])
+
+# Plot styling
+
+# Remove the plot frame lines
 ax = axes()
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['left'].set_visible(False)
-ax.spines['bottom'].set_visible(False)
-g = ax.yaxis.tick_left()
+ax.spines["top"].set_visible(False)
+ax.spines["right"].set_visible(False)
+ax.spines["left"].set_visible(False)
+ax.spines["bottom"].set_visible(False)
+
+# Only show
+
+# Color the y-axis ticks the same dark red color, and the x-axis ticks white
 ax.tick_params(axis="y", color="#8A0707")
 ax.tick_params(axis="x", color="white")
+
 ax.xaxis.grid(color="white", linestyle="-")
-ax.xaxis.tick_bottom()
 ```
 
 
@@ -229,29 +275,39 @@ per minute and the duration of each movie on the right of the graph.
 
 ```r
 # Combine number of on screen death per minute and duration of the movies into a new character string column
-body.count.data$Deaths_Per_Minute_With_Length = paste(round(body.count.data$Deaths_Per_Minute, digits=2), ' (', body.count.data$Length_Minutes, ' mins)', sep='');
+body.count.data <- within(body.count.data, {
+  Deaths_Per_Minute_With_Length = paste0(round(body.count.data$Deaths_Per_Minute, digits=2), ' (', body.count.data$Length_Minutes, ' mins)')
+})
 
 # Add number of on screen deaths per minute and duration of movies at the end of each bar 
-graph = graph + layer(
-  ltext(
-    body.count.data$Deaths_Per_Minute,                # x position of the text
-    25:1,                                             # y position of the text
-    pos=4,                                            # Position of the text relative to the x and y position (4 = to the right)
-    body.count.data$Deaths_Per_Minute_With_Length));  # Text to display                                     
+graph <- graph + layer(with(body.count.data, 
+  panel.text(
+    Deaths_Per_Minute,                 # x position of the text
+    25:1,                               # y position of the text
+    pos = 4,                           # Position of the text relative to the x and y position (4 = to the right)
+    Deaths_Per_Minute_With_Length)))   # Text to display                                     
 
 # Print graph
-print(graph);
+print(graph)
 ```
 
 <img src="figure/rightLabelsR.png" title="plot of chunk rightLabelsR" alt="plot of chunk rightLabelsR" style="display: block; margin: auto;" />
 
 ```python
-# this function adds the deaths per minute label to the right of the bars
+# This function adds the deaths per minute label to the right of the bars
 def autolabel(rects):
   for i, rect in enumerate(rects):
-    width = rect.get_width()
-    txt = str(round(float(width), 2)) + " (" + str(body_count_data["Length_Minutes"].values[i]) + " mins)"
-    plt.text(width + 0.25, rect.get_y() + rect.get_height() / 2., txt, ha="left", va="center", fontsize=14)
+  width = rect.get_width()
+label_text = (str(round(float(width), 2)) +
+                " (" + str(body_count_data["Length_Minutes"].values[i]) +
+                " mins)")
+
+plt.text(width + 0.25,
+         rect.get_y() + rect.get_height() / 2.,
+         label_text,
+         ha="left",
+         va="center",
+         fontsize=14)
 
 autolabel(rects)
 ```
@@ -273,22 +329,23 @@ library(jpeg);  # To read JPG images
 library(grid);  # Graphics library with better image plotting capabilities
 
 # Download a pretty background image
-download.file(url = 'http://www.theswarmlab.com/wp-content/uploads/2014/01/bloody_gun.jpg', destfile = 'bloody_gun.jpg', quiet = TRUE);
+download.file(url = 'http://www.theswarmlab.com/wp-content/uploads/2014/01/bloody_gun.jpg', 
+              destfile = 'bloody_gun.jpg', quiet = TRUE)
 
 # Load gun image using "readJPEG" from the "jpeg" package
-img = readJPEG('bloody_gun.jpg');
+img <- readJPEG('bloody_gun.jpg')
 
 # Add image to graph using "grid.raster" from the "grid" package
-graph = graph + layer_(
+graph <- graph + layer_(
   grid.raster(
     as.raster(img),                 # Image as a raster
     x = 1,                          # x location of image "Normalised Parent Coordinates"
     y = 0,                          # y location of image "Normalised Parent Coordinates"
     height = 0.7,                   # Height of the image. 1 indicates that the image height is equal to the graph height
-    just = c('right', 'bottom')));  # Justification of the image relative to its x and y locations
+    just = c('right', 'bottom')))   # Justification of the image relative to its x and y locations
 
 # Print graph
-print(graph);
+print(graph)
 ```
 
 <img src="figure/gunR.png" title="plot of chunk gunR" alt="plot of chunk gunR" style="display: block; margin: auto;" />
@@ -298,6 +355,15 @@ ___
 
 #### 4 - Source code ####
 
-R and Python source codes are available
+R and Python source codes are available 
 [here](https://github.com/morpionZ/R-vs-Python/tree/master/Deadliest%20movies/code).
+
+For F# fan, [Terje Tyldum](http://terjetyl.ghost.io/) has written his version
+of the code in F# [here](http://terjetyl.ghost.io/f-charting-challenge/).
+
+Randy and I also recommend that you check out [this 
+post](http://nbviewer.ipython.org/github/yaph/ipython-notebooks/blob/master/Exploring%20Movie%20Body%20Counts.ipynb)
+by [Ramiro Gómez](http://ramiro.org/) ([\@yaph](https://twitter.com/yaph)) 
+where he does a more in-depth analysis of the data set we used for today’s 
+challenge.
 
