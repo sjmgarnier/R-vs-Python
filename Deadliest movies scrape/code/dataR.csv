@@ -1,0 +1,413 @@
+"URL","Film","Year","Body_Count","MPAA_Rating","Genre","Director","Length_Minutes","IMDB_rating"
+"http://www.moviebodycounts.com/24_Hour_Party_People.htm","24 Hour Party People",2002,7,"R","Biography|Comedy|Drama","Michael Winterbottom",117,7.3
+"http://www.moviebodycounts.com/3-10_To_Yuma.htm","3:10 to Yuma",2007,45,"R","Adventure|Crime|Drama","James Mangold",122,7.8
+"http://www.moviebodycounts.com/300.htm","300",2006,600,"R","Action|Fantasy|History","Zack Snyder",117,7.8
+"http://www.moviebodycounts.com/8MM.htm","8MM",1999,7,"R","Crime|Mystery|Thriller","Joel Schumacher",123,6.4
+"http://www.moviebodycounts.com/Abominable_Dr_Phibes.htm","The Abominable Dr. Phibes",1971,10,"PG-13","Fantasy|Horror","Robert Fuest",94,7.2
+"http://www.moviebodycounts.com/Above_the_Law.htm","Above the Law",1988,18,"R","Action|Crime|Drama","Andrew Davis",99,5.8
+"http://www.moviebodycounts.com/Action_Jackson.htm","Action Jackson",1988,17,"R","Action|Comedy|Crime","Craig R. Baxley",96,5
+"http://www.moviebodycounts.com/Adventures_of_Ford_Fairlane.htm","The Adventures of Ford Fairlane",1990,7,"R","Action|Adventure|Comedy","Renny Harlin",104,6.1
+"http://www.moviebodycounts.com/Aeon_Flux.htm","Æon Flux",2005,58,"PG-13","Action|Sci-Fi","Karyn Kusama",93,5.4
+"http://www.moviebodycounts.com/Akira.htm","Akira",1988,119,"R","Animation|Action|Adventure","Katsuhiro Ohtomo",124,8.1
+"http://www.moviebodycounts.com/Ali_G_Indahouse.htm","Ali G Indahouse",2002,11,"R","Comedy","Mark Mylod",85,6.2
+"http://www.moviebodycounts.com/Alien.htm","Alien",1979,18,"R","Horror|Sci-Fi","Ridley Scott",117,8.5
+"http://www.moviebodycounts.com/Aliens_vs_Predator_R.htm","Aliens vs. Predator: Requiem",2007,230,"R","Action|Horror|Sci-Fi","Colin Strause|Greg Strause",94,4.7
+"http://www.moviebodycounts.com/Alpha_Dog.htm","Alpha Dog",2006,3,"R","Biography|Crime|Drama","Nick Cassavetes",122,6.9
+"http://www.moviebodycounts.com/Altered_States.htm","Altered States",1980,5,"R","Drama|Fantasy|Horror","Ken Russell",102,6.9
+"http://www.moviebodycounts.com/American_Gangster.htm","American Gangster",2007,15,"R","Biography|Crime|Drama","Ridley Scott",157,7.8
+"http://www.moviebodycounts.com/American_Ninja.htm","American Ninja",1985,114,"R","Action|Adventure|Romance","Sam Firstenberg",95,5.2
+"http://www.moviebodycounts.com/American_Pop.htm","American Pop",1981,61,"R","Animation|Drama|Music","Ralph Bakshi",96,7
+"http://www.moviebodycounts.com/American_Psycho.htm","American Psycho",2000,18,"R","Crime|Drama","Mary Harron",102,7.6
+"http://www.moviebodycounts.com/American_Yakuza.htm","American Yakuza",1993,53,"R","Action|Crime|Drama","Frank A. Cappello",96,5.7
+"http://www.moviebodycounts.com/Another_Day_In_Paradise.htm","Another Day in Paradise",1998,9,"R","Crime|Drama|Thriller","Larry Clark",101,6.5
+"http://www.moviebodycounts.com/Apocalypse_Now.htm","Apocalypse Now",1979,62,"R","Drama|War","Francis Ford Coppola",153,8.5
+"http://www.moviebodycounts.com/Apocalypto.htm","Apocalypto",2006,114,"R","Action|Adventure|Drama","Mel Gibson",139,7.8
+"http://www.moviebodycounts.com/Appaloosa.htm","Appaloosa",2008,10,"R","Crime|Drama|Western","Ed Harris",115,6.8
+"http://www.moviebodycounts.com/Armageddon.htm","Armageddon",1998,16,"PG-13","Action|Adventure|Sci-Fi","Michael Bay",151,6.5
+"http://www.moviebodycounts.com/Army_of_Darkness.htm","Army of Darkness",1992,107,"R","Comedy|Fantasy|Horror","Sam Raimi",81,7.6
+"http://www.moviebodycounts.com/Assault_On_Precinct_13_%281976%29.htm","Assault on Precinct 13",1976,39,"R","Action|Crime|Thriller","John Carpenter",91,7.4
+"http://www.moviebodycounts.com/Assault_On_Precinct_13_%282005%29.htm","Assault on Precinct 13",2005,21,"R","Action|Drama|Crime","Jean-François Richet",109,6.3
+"http://www.moviebodycounts.com/Atonement.htm","Atonement",2007,34,"R","Drama|Mystery|Romance","Joe Wright",123,7.8
+"http://www.moviebodycounts.com/Austin_Powers_in_Goldmember.htm","Austin Powers in Goldmember",2002,6,"PG-13","Action|Comedy|Crime","Jay Roach",94,6.2
+"http://www.moviebodycounts.com/Bad_Boys.htm","Bad Boys",1995,30,"R","Action|Comedy|Crime","Michael Bay",118,6.8
+"http://www.moviebodycounts.com/Bad_Boys_2.htm","Bad Boys II",2003,63,"R","Action|Comedy|Crime","Michael Bay",147,6.5
+"http://www.moviebodycounts.com/Bangkok_Dangerous.htm","Bangkok Dangerous",2008,38,"R","Action|Crime|Thriller","Oxide Pang Chun|Danny Pang",99,5.4
+"http://www.moviebodycounts.com/Bank_Job.htm","The Bank Job",2008,4,"R","Crime|Drama|Thriller","Roger Donaldson",111,7.3
+"http://www.moviebodycounts.com/District_B13.htm","District B13",2004,34,"R","Action|Sci-Fi|Thriller","Pierre Morel",84,7.2
+"http://www.moviebodycounts.com/Barton_Fink.htm","Barton Fink",1991,3,"R","Drama|Mystery","Joel Coen|Ethan Coen",116,7.8
+"http://www.moviebodycounts.com/Batman.htm","Batman",1989,56,"PG-13","Action|Thriller","Tim Burton",126,7.6
+"http://www.moviebodycounts.com/batman_begins.htm","Batman Begins",2005,18,"PG-13","Action|Adventure|Crime","Christopher Nolan",140,8.3
+"http://www.moviebodycounts.com/Batman_Returns.htm","Batman Returns",1992,18,"PG-13","Action|Fantasy","Tim Burton",126,7
+"http://www.moviebodycounts.com/A_Better_Tomorrow.htm","A Better Tomorrow",1986,65,"R","Action|Crime|Drama","John Woo",95,7.6
+"http://www.moviebodycounts.com/A_Better_Tomorrow2.htm","A Better Tomorrow II",1987,199,"UNRATED","Action|Crime|Drama","John Woo",105,7.4
+"http://www.moviebodycounts.com/Big_Hit.htm","The Big Hit",1998,38,"R","Action|Comedy|Crime","Kirk Wong",91,6.1
+"http://www.moviebodycounts.com/Big_Trouble_In_Little_China.htm","Big Trouble in Little China",1986,46,"PG-13","Action|Adventure|Comedy","John Carpenter",99,7.3
+"http://www.moviebodycounts.com/Black_Dahlia.htm","The Black Dahlia",2006,13,"R","Crime|Drama|Mystery","Brian De Palma",121,5.6
+"http://www.moviebodycounts.com/Blade.htm","Blade",1998,111,"R","Action|Fantasy|Horror","Stephen Norrington",120,7.1
+"http://www.moviebodycounts.com/Blade_II.htm","Blade II",2002,98,"R","Action|Horror|Sci-Fi","Guillermo del Toro",117,6.6
+"http://www.moviebodycounts.com/Blade_Trinity.htm","Blade: Trinity",2004,140,"R","Action|Adventure|Fantasy","David S. Goyer",113,5.8
+"http://www.moviebodycounts.com/Blade_Runner.htm","Blade Runner",1982,5,"R","Drama|Sci-Fi|Thriller","Ridley Scott",117,8.3
+"http://www.moviebodycounts.com/BloodRayne.htm","BloodRayne",2005,102,"R","Action|Adventure|Fantasy","Uwe Boll",95,2.8
+"http://www.moviebodycounts.com/Blood_Diamond.htm","Blood Diamond",2006,187,"R","Adventure|Drama|Thriller","Edward Zwick",143,8
+"http://www.moviebodycounts.com/Boondock_Saints.htm","The Boondock Saints",1999,33,"R","Action|Crime|Thriller","Troy Duffy",108,7.9
+"http://www.moviebodycounts.com/Bourne_Identity.htm","The Bourne Identity",2002,8,"PG-13","Action|Mystery|Thriller","Doug Liman",119,7.9
+"http://www.moviebodycounts.com/Bourne_Supremacy.htm","The Bourne Supremacy",2004,9,"PG-13","Action|Crime|Thriller","Paul Greengrass",108,7.7
+"http://www.moviebodycounts.com/Bourne_Ultimatum.htm","The Bourne Ultimatum",2007,5,"PG-13","Action|Crime|Thriller","Paul Greengrass",115,8.1
+"http://www.moviebodycounts.com/Braveheart.htm","Braveheart",1995,184,"R","Action|Biography|Drama","Mel Gibson",177,8.4
+"http://www.moviebodycounts.com/Brazil.htm","Brazil",1985,25,"R","Drama|Fantasy|Sci-Fi","Terry Gilliam",132,8
+"http://www.moviebodycounts.com/Bridge_of_Dragons.htm","Bridge of Dragons",1999,109,"R","Action|Romance|Sci-Fi","Isaac Florentine",92,4.5
+"http://www.moviebodycounts.com/Broken_Arrow.htm","Broken Arrow",1996,25,"R","Action|Adventure|Thriller","John Woo",108,5.9
+"http://www.moviebodycounts.com/Brotherhood_of_the_Wolf.htm","Brotherhood of the Wolf",2001,40,"R","Action|Adventure|Horror","Christophe Gans",142,7.1
+"http://www.moviebodycounts.com/Buffalo_Soldiers.htm","Buffalo Soldiers",2001,16,"R","Comedy|Crime|Drama","Gregor Jordan",98,6.9
+"http://www.moviebodycounts.com/Bullet_In_The_Head.htm","Bullet in the Head",1990,214,"NOT RATED","Crime|Drama|Thriller","John Woo",136,7.7
+"http://www.moviebodycounts.com/Bulletproof_Monk.htm","Bulletproof Monk",2003,37,"PG-13","Action|Comedy|Fantasy","Paul Hunter",104,5.4
+"http://www.moviebodycounts.com/Cabin_Fever.htm","Cabin Fever",2002,19,"R","Horror|Sci-Fi","Eli Roth",93,5.5
+"http://www.moviebodycounts.com/Casino.htm","Casino",1995,25,"R","Biography|Crime|Drama","Martin Scorsese",178,8.2
+"http://www.moviebodycounts.com/Casino_Royale.htm","Casino Royale",2006,54,"PG-13","Action|Crime|Thriller","Martin Campbell",144,8
+"http://www.moviebodycounts.com/Charlie_Wilsons_War.htm","Charlie Wilson's War",2007,22,"R","Biography|Comedy|Drama","Mike Nichols",102,7.1
+"http://www.moviebodycounts.com/Charlie%27s_Angels_Full_Throttle.htm","Charlie's Angels: Full Throttle",2003,39,"PG-13","Action|Adventure|Comedy","McG",106,4.8
+"http://www.moviebodycounts.com/Children_of_Men.htm","Children of Men",2006,77,"R","Adventure|Drama|Sci-Fi","Alfonso Cuarón",109,7.9
+"http://www.moviebodycounts.com/Christine.htm","Christine",1983,6,"R","Drama|Horror|Mystery","John Carpenter",110,6.5
+"http://www.moviebodycounts.com/Christmas_Story.htm","A Christmas Story",1983,4,"PG","Comedy|Family","Bob Clark",94,8.1
+"http://www.moviebodycounts.com/Lion_Witch_Wardrobe.htm","The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",2005,86,"PG","Adventure|Family|Fantasy","Andrew Adamson",143,6.9
+"http://www.moviebodycounts.com/Chronicles_of_Riddick.htm","The Chronicles of Riddick",2004,187,"PG-13","Action|Adventure|Sci-Fi","David Twohy",119,6.6
+"http://www.moviebodycounts.com/Circus_2000.htm","Circus",2000,8,"R","Crime|Thriller|Drama","Rob Walker",95,5.8
+"http://www.moviebodycounts.com/Class_of_1999.htm","Class of 1999",1990,43,"R","Action|Horror|Sci-Fi","Mark L. Lester",99,5.6
+"http://www.moviebodycounts.com/Clear_and_Present_Danger.htm","Clear and Present Danger",1994,41,"PG-13","Action|Drama|Thriller","Phillip Noyce",141,6.9
+"http://www.moviebodycounts.com/Clockwork_Orange.htm","A Clockwork Orange",1971,7,"X","Crime|Drama|Sci-Fi","Stanley Kubrick",136,8.4
+"http://www.moviebodycounts.com/Cloverfield.htm","Cloverfield",2008,54,"PG-13","Action|Sci-Fi|Thriller","Matt Reeves",85,7.1
+"http://www.moviebodycounts.com/Collateral.htm","Collateral",2004,17,"R","Crime|Drama|Thriller","Michael Mann",120,7.6
+"http://www.moviebodycounts.com/Confessions_Of_A_Dangerous.htm","Confessions of a Dangerous Mind",2002,50,"R","Biography|Comedy|Crime","George Clooney",113,7.1
+"http://www.moviebodycounts.com/Commando.htm","Commando",1985,88,"R","Action|Thriller","Mark L. Lester",90,6.6
+"http://www.moviebodycounts.com/Con_Air.htm","Con Air",1997,30,"R","Action|Crime|Thriller","Simon West",115,6.8
+"http://www.moviebodycounts.com/Conspiracy_Theory.htm","Conspiracy Theory",1997,7,"R","Action|Crime|Mystery","Richard Donner",135,6.7
+"http://www.moviebodycounts.com/Constant_Gardener.htm","The Constant Gardener",2005,18,"R","Drama|Mystery|Thriller","Fernando Meirelles",129,7.5
+"http://www.moviebodycounts.com/Constantine.htm","Constantine",2005,7,"R","Fantasy|Horror","Francis Lawrence",121,6.9
+"http://www.moviebodycounts.com/Hitman-1998.htm","Contract Killer",1998,25,"R","Action|Comedy","Wei Tung",103,6.1
+"http://www.moviebodycounts.com/The_Corruptor.htm","The Corruptor",1999,37,"R","Action|Crime|Drama","James Foley",110,6
+"http://www.moviebodycounts.com/Count_of_Monte_Cristo.htm","The Count of Monte Cristo",2002,5,"PG-13","Action|Adventure|Drama","Kevin Reynolds",131,7.7
+"http://www.moviebodycounts.com/Cradle_2_The_Grave.htm","Cradle 2 the Grave",2003,13,"R","Action|Crime|Drama","Andrzej Bartkowiak",101,5.7
+"http://www.moviebodycounts.com/Crank.htm","Crank",2006,57,"R","Action|Crime|Thriller","Mark Neveldine|Brian Taylor",88,7
+"http://www.moviebodycounts.com/Creepshow.htm","Creepshow",1982,15,"R","Comedy|Horror","George A. Romero",120,6.8
+"http://www.moviebodycounts.com/Crime_Spree.htm","Crime Spree",2003,20,"R","Action|Comedy|Crime","Brad Mirman",98,6.5
+"http://www.moviebodycounts.com/Crouching_Tiger,_Hidden_Dragon.htm","Crouching Tiger, Hidden Dragon",2000,14,"PG-13","Action|Drama|Romance","Ang Lee",120,7.9
+"http://www.moviebodycounts.com/Crow.htm","The Crow",1994,35,"R","Action|Fantasy","Alex Proyas",102,7.6
+"http://www.moviebodycounts.com/Crucible.htm","The Crucible",1996,12,"PG-13","Drama|History","Nicholas Hytner",124,6.8
+"http://www.moviebodycounts.com/Dark_Blue.htm","Dark Blue",2002,8,"R","Crime|Drama|Thriller","Ron Shelton",118,6.6
+"http://www.moviebodycounts.com/Dark_Knight.htm","The Dark Knight",2008,36,"PG-13","Action|Crime|Drama","Christopher Nolan",152,9
+"http://www.moviebodycounts.com/Day_of_the_Dead.htm","Day of the Dead",1985,40,"UNRATED","Horror","George A. Romero",96,7.2
+"http://www.moviebodycounts.com/Dawn_of_the_Dead.htm","Dawn of the Dead",1978,175,"UNRATED","Horror","George A. Romero",127,8
+"http://www.moviebodycounts.com/Dawn_of_the_Dead_04.htm","Dawn of the Dead",2004,131,"R","Action|Horror|Sci-Fi","Zack Snyder",101,7.4
+"http://www.moviebodycounts.com/Death_Sentence.htm","Death Sentence",2007,15,"R","Action|Crime|Drama","James Wan",105,6.8
+"http://www.moviebodycounts.com/Death_to_Smoochy.htm","Death to Smoochy",2002,3,"R","Comedy|Crime|Drama","Danny DeVito",109,6.4
+"http://www.moviebodycounts.com/Delta_Force2.htm","Delta Force 2: The Colombian Connection",1990,92,"R","Action|Adventure|Thriller","Aaron Norris",111,4.5
+"http://www.moviebodycounts.com/Demolition_Man.htm","Demolition Man",1993,25,"R","Action|Crime|Sci-Fi","Marco Brambilla",115,6.5
+"http://www.moviebodycounts.com/The_Departed.htm","The Departed",2006,21,"R","Crime|Drama|Thriller","Martin Scorsese",151,8.5
+"http://www.moviebodycounts.com/Desperado.htm","Desperado",1995,80,"R","Action|Crime|Thriller","Robert Rodriguez",104,7.2
+"http://www.moviebodycounts.com/Devils_Rejects.htm","The Devil's Rejects",2005,30,"R","Horror","Rob Zombie",107,6.9
+"http://www.moviebodycounts.com/Diamonds_are_Forever.htm","Diamonds Are Forever",1971,29,"GP","Action|Adventure|Crime","Guy Hamilton",120,6.7
+"http://www.moviebodycounts.com/Die_Hard.htm","Die Hard",1988,20,"R","Action|Thriller","John McTiernan",131,8.3
+"http://www.moviebodycounts.com/Die_Hard_2.htm","Die Hard 2",1990,37,"R","Action|Thriller","Renny Harlin",124,7.1
+"http://www.moviebodycounts.com/Die_Hard_with_a_Vengeance.htm","Die Hard: With a Vengeance",1995,26,"R","Action|Crime|Thriller","John McTiernan",131,7.6
+"http://www.moviebodycounts.com/District_B13.htm","District B13",2004,34,"R","Action|Sci-Fi|Thriller","Pierre Morel",84,7.2
+"http://www.moviebodycounts.com/Disturbia.htm","Disturbia",2007,10,"PG-13","Drama|Mystery|Thriller","D.J. Caruso",105,6.9
+"http://www.moviebodycounts.com/Domino.htm","Domino",2005,51,"R","Action|Biography|Crime","Tony Scott",127,5.9
+"http://www.moviebodycounts.com/Donnie_Darko.htm","Donnie Darko",2001,3,"R","Drama|Mystery|Sci-Fi","Richard Kelly",113,8.1
+"http://www.moviebodycounts.com/Dr_No.htm","Dr. No",1962,8,"TV-PG","Action|Adventure|Crime","Terence Young",110,7.3
+"http://www.moviebodycounts.com/Dracula_2000.htm","Dracula 2000",2000,18,"R","Horror|Thriller","Patrick Lussier",99,4.8
+"http://www.moviebodycounts.com/Dune.htm","Dune",1984,186,"PG-13","Action|Adventure|Sci-Fi","David Lynch",137,6.6
+"http://www.moviebodycounts.com/Equilibrium.htm","Equilibrium",2002,236,"R","Action|Drama|Sci-Fi","Kurt Wimmer",107,7.6
+"http://www.moviebodycounts.com/Eraser.htm","Eraser",1996,52,"R","Action|Drama|Mystery","Chuck Russell",115,6
+"http://www.moviebodycounts.com/Escape_From_New_York.htm","Escape from New York",1981,28,"R","Action|Sci-Fi","John Carpenter",99,7.2
+"http://www.moviebodycounts.com/Evil_Dead_II.htm","Evil Dead II",1987,8,"X","Comedy|Horror","Sam Raimi",84,7.8
+"http://www.moviebodycounts.com/Army_of_Darkness.htm","Army of Darkness",1992,107,"R","Comedy|Fantasy|Horror","Sam Raimi",81,7.6
+"http://www.moviebodycounts.com/eXistenZ.htm","eXistenZ",1999,11,"R","Sci-Fi","David Cronenberg",97,6.8
+"http://www.moviebodycounts.com/Exit_Wounds.htm","Exit Wounds",2001,38,"R","Action|Comedy|Crime","Andrzej Bartkowiak",101,5.4
+"http://www.moviebodycounts.com/Face_Off.htm","Face/Off",1997,56,"R","Action|Crime|Sci-Fi","John Woo",138,7.3
+"http://www.moviebodycounts.com/Fair_Game.htm","Fair Game",1995,21,"R","Action|Thriller","Andrew Sipes",91,4
+"http://www.moviebodycounts.com/FF_Silver_Surfer.htm","Fantastic 4: Rise of the Silver Surfer",2007,6,"PG","Action|Fantasy|Sci-Fi","Tim Story",92,5.6
+"http://www.moviebodycounts.com/Fear_and_Loathing_in_Las_Vegas.htm","Fear and Loathing in Las Vegas",1998,10,"R","Adventure|Comedy","Terry Gilliam",118,7.7
+"http://www.moviebodycounts.com/Fearless_Jet_Li.htm","Fearless",2006,5,"PG-13","Action|Biography|Drama","Ronny Yu",104,7.7
+"http://www.moviebodycounts.com/Fifth_Element.htm","The Fifth Element",1997,80,"PG-13","Action|Adventure|Sci-Fi","Luc Besson",126,7.6
+"http://www.moviebodycounts.com/Fight_Club.htm","Fight Club",1999,14,"R","Drama","David Fincher",139,8.9
+"http://www.moviebodycounts.com/Firewall.htm","Firewall",2006,5,"PG-13","Crime|Thriller","Richard Loncraine",105,5.8
+"http://www.moviebodycounts.com/Fistful_of_Dollars.htm","Per un pugno di dollari",1964,120,"R","Western","Sergio Leone",99,8.1
+"http://www.moviebodycounts.com/Flags_of_Our_Fathers.htm","Flags of Our Fathers",2006,93,"R","Drama|History|War","Clint Eastwood",132,7.1
+"http://www.moviebodycounts.com/Fly2.htm","The Fly II",1989,8,"R","Horror|Sci-Fi","Chris Walas",105,4.8
+"http://www.moviebodycounts.com/The_Fog.htm","The Fog",1980,6,"R","Horror","John Carpenter",89,6.8
+"http://www.moviebodycounts.com/Fools_Gold.htm","Fool's Gold",2008,3,"PG-13","Adventure|Comedy|Romance","Andy Tennant",112,5.6
+"http://www.moviebodycounts.com/For_a_Few_Dollars_More.htm","For a Few Dollars More",1965,42,"APPROVED","Western","Sergio Leone",132,8.3
+"http://www.moviebodycounts.com/For_Your_Eyes_Only.htm","For Your Eyes Only",1981,42,"PG","Action|Adventure|Crime","John Glen",127,6.8
+"http://www.moviebodycounts.com/Formula_51.htm","Formula 51",2001,22,"R","Action|Comedy|Crime","Ronny Yu",93,6.3
+"http://www.moviebodycounts.com/Four_Brothers.htm","Four Brothers",2005,16,"R","Action|Crime|Drama","John Singleton",109,6.9
+"http://www.moviebodycounts.com/French_Connection.htm","The French Connection",1971,12,"R","Action|Crime|Thriller","William Friedkin",104,7.8
+"http://www.moviebodycounts.com/Friday_the_13th_%282009%29.htm","Friday the 13th",2009,14,"R","Horror","Marcus Nispel",97,5.5
+"http://www.moviebodycounts.com/From_Dusk_Till_Dawn.htm","From Dusk Till Dawn",1996,122,"R","Action|Crime|Horror","Robert Rodriguez",108,7.3
+"http://www.moviebodycounts.com/From_Russia_With_Love.htm","From Russia with Love",1963,21,"APPROVED","Action|Adventure|Crime","Terence Young",115,7.5
+"http://www.moviebodycounts.com/Fugitive.htm","The Fugitive",1993,5,"PG-13","Action|Adventure|Crime","Andrew Davis",130,7.8
+"http://www.moviebodycounts.com/Gangster_No_1.htm","Gangster No. 1",2000,7,"R","Crime|Drama|Thriller","Paul McGuigan",103,6.8
+"http://www.moviebodycounts.com/Get_Carter.htm","Get Carter",2000,5,"R","Action|Crime|Drama","Stephen Kay",102,5
+"http://www.moviebodycounts.com/Ghost_Rider.htm","Ghost Rider",2007,52,"PG-13","Action|Fantasy|Thriller","Mark Steven Johnson",114,5.2
+"http://www.moviebodycounts.com/Gladiator.htm","Gladiator",2000,77,"R","Action|Adventure|Drama","Ridley Scott",155,8.5
+"http://www.moviebodycounts.com/Goldeneye.htm","GoldenEye",1995,57,"PG-13","Action|Crime|Thriller","Martin Campbell",130,7.2
+"http://www.moviebodycounts.com/Goldfinger.htm","Goldfinger",1964,62,"TV-PG","Action|Adventure|Crime","Guy Hamilton",110,7.8
+"http://www.moviebodycounts.com/The_Good_Shepherd.htm","The Good Shepherd",2006,5,"R","Drama|History|Thriller","Robert De Niro",167,6.7
+"http://www.moviebodycounts.com/The_Good,_the_Bad_and_the_Ugly.htm","The Good, the Bad and the Ugly",1966,126,"APPROVED","Adventure|Western","Sergio Leone",161,9
+"http://www.moviebodycounts.com/Grindhouse_Death_Proof.htm","Death Proof",2007,8,"R","Action|Thriller","Quentin Tarantino",113,7.1
+"http://www.moviebodycounts.com/Grindhouse_Double_Feature.htm","Grindhouse",2007,310,"R","Action|Horror|Thriller","Robert Rodriguez|Eli Roth|3 more credits",191,7.7
+"http://www.moviebodycounts.com/Grindhouse_Planet_Terror.htm","Planet Terror",2007,281,"NOT RATED","Action|Horror","Robert Rodriguez",105,7.3
+"http://www.moviebodycounts.com/Grosse_Pointe_Blank.htm","Grosse Pointe Blank",1997,16,"R","Action|Comedy|Crime","George Armitage",107,7.4
+"http://www.moviebodycounts.com/Guardian.htm","The Guardian",2006,11,"PG-13","Action|Adventure|Drama","Andrew Davis",139,6.8
+"http://www.moviebodycounts.com/Hamlet_1990.htm","Hamlet",1990,9,"PG","Drama|Romance","Franco Zeffirelli",130,6.8
+"http://www.moviebodycounts.com/Hannibal.htm","Hannibal",2001,15,"R","Crime|Drama|Thriller","Ridley Scott",131,6.7
+"http://www.moviebodycounts.com/Hard_Boiled.htm","Hard Boiled",1992,307,"R","Action|Crime|Drama","John Woo",128,7.9
+"http://www.moviebodycounts.com/Hard_to_Kill.htm","Hard to Kill",1990,19,"R","Action|Drama|Crime","Bruce Malmuth",96,5.6
+"http://www.moviebodycounts.com/HP_Goblet_of_Fire.htm","Harry Potter and the Goblet of Fire",2005,3,"PG-13","Adventure|Family|Fantasy","Mike Newell",157,7.6
+"http://www.moviebodycounts.com/Heat.htm","Heat",1995,18,"R","Action|Crime|Drama","Michael Mann",170,8.3
+"http://www.moviebodycounts.com/Hellboy.htm","Hellboy",2004,42,"PG-13","Action|Adventure|Fantasy","Guillermo del Toro",122,6.8
+"http://www.moviebodycounts.com/Hero.htm","Ying xiong",2002,152,"PG-13","Action|Drama|History","Yimou Zhang",99,8
+"http://www.moviebodycounts.com/History_of_Violence.htm","A History of Violence",2005,13,"R","Crime|Drama|Thriller","David Cronenberg",96,7.5
+"http://www.moviebodycounts.com/Hitman-1998.htm","Contract Killer",1998,25,"R","Action|Comedy","Wei Tung",103,6.1
+"http://www.moviebodycounts.com/Hitman.htm","Hitman",2007,55,"R","Action|Crime|Drama","Xavier Gens",89,6.3
+"http://www.moviebodycounts.com/Hollow_Point.htm","Hollow Point",1996,17,"R","Thriller|Comedy|Action","Sidney J. Furie",102,5.7
+"http://www.moviebodycounts.com/Hostage.htm","Hostage",2005,16,"R","Crime|Drama|Mystery","Florent-Emilio Siri",113,6.6
+"http://www.moviebodycounts.com/Hot_Fuzz.htm","Hot Fuzz",2007,29,"R","Action|Comedy","Edgar Wright",121,7.9
+"http://www.moviebodycounts.com/Hot_Shots_Deux.htm","Hot Shots! Part Deux",1993,114,"PG-13","Action|Comedy|War","Jim Abrahams",86,6.5
+"http://www.moviebodycounts.com/House_of_the_Dead.htm","House of the Dead",2003,141,"R","Action|Horror|Thriller","Uwe Boll",90,2
+"http://www.moviebodycounts.com/House_on_Haunted_Hill_99.htm","House on Haunted Hill",1999,30,"R","Horror|Mystery|Thriller","William Malone",93,5.5
+"http://www.moviebodycounts.com/Hunt_for_Red_October.htm","The Hunt for Red October",1990,7,"PG","Action|Adventure|Thriller","John McTiernan",134,7.6
+"http://www.moviebodycounts.com/I-Am-Legend.htm","I Am Legend",2007,71,"PG-13","Drama|Sci-Fi|Thriller","Francis Lawrence",101,7.2
+"http://www.moviebodycounts.com/In_Bruges.htm","In Bruges",2008,5,"R","Comedy|Crime|Drama","Martin McDonagh",107,8
+"http://www.moviebodycounts.com/Incredible_Hulk_2008.htm","The Incredible Hulk",2008,41,"PG-13","Action|Sci-Fi|Thriller","Louis Leterrier",112,6.9
+"http://www.moviebodycounts.com/Incredibles.htm","Batman Begins",2005,16,"PG-13","Action|Adventure|Crime","Christopher Nolan",140,8.3
+"http://www.moviebodycounts.com/Indiana_Jones_Chrystal_Skull.htm","Indiana Jones and the Kingdom of the Crystal Skull",2008,152,"PG-13","Action|Adventure","Steven Spielberg",122,6.3
+"http://www.moviebodycounts.com/Inside_Man.htm","Inside Man",2006,13,"R","Crime|Drama|Thriller","Spike Lee",129,7.7
+"http://www.moviebodycounts.com/International.htm","The International",2009,19,"R","Action|Crime|Drama","Tom Tykwer",118,6.5
+"http://www.moviebodycounts.com/Invasion_USA.htm","Invasion U.S.A.",1985,146,"R","Action|Thriller","Joseph Zito",107,5.1
+"http://www.moviebodycounts.com/Iron_Man.htm","Iron Man",2008,57,"PG-13","Action|Adventure|Sci-Fi","Jon Favreau",126,7.9
+"http://www.moviebodycounts.com/The_Island.htm","The Island",2005,12,"PG-13","Action|Adventure|Sci-Fi","Michael Bay",136,6.9
+"http://www.moviebodycounts.com/Jack_Brooks_Monster_Slayer.htm","Jack Brooks: Monster Slayer",2007,15,"R","Action|Comedy|Horror","Jon Knautz",85,6.1
+"http://www.moviebodycounts.com/The_Jackal.htm","The Jackal",1997,11,"R","Action|Adventure|Crime","Michael Caton-Jones",124,6.3
+"http://www.moviebodycounts.com/Jackie_Brown.htm","Jackie Brown",1997,4,"R","Crime|Drama|Thriller","Quentin Tarantino",154,7.5
+"http://www.moviebodycounts.com/Jason_X.htm","Jason X",2001,27,"R","Horror|Sci-Fi|Thriller","James Isaac",91,4.3
+"http://www.moviebodycounts.com/Jumper.htm","Jumper",2008,7,"PG-13","Action|Adventure|Sci-Fi","Doug Liman",88,6
+"http://www.moviebodycounts.com/Jurassic_Park_3.htm","Jurassic Park III",2001,6,"PG-13","Action|Adventure|Fantasy","Joe Johnston",92,5.9
+"http://www.moviebodycounts.com/K_19_The_Widowmaker.htm","K-19: The Widowmaker",2002,10,"PG-13","Drama|History|Thriller","Kathryn Bigelow",138,6.6
+"http://www.moviebodycounts.com/Kelly%27s_Heroes.htm","Kelly's Heroes",1970,139,"GP","Action|Adventure|Comedy","Brian G. Hutton",144,7.6
+"http://www.moviebodycounts.com/Kingdom_of_Heaven.htm","Kingdom of Heaven",2005,610,"R","Action|Adventure|Drama","Ridley Scott",144,7.2
+"http://www.moviebodycounts.com/Kill_Bill_1.htm","Kill Bill: Vol. 1",2003,190,"R","Action|Crime","Quentin Tarantino",111,8.2
+"http://www.moviebodycounts.com/Kill_Bill_2.htm","Kill Bill: Vol. 2",2004,3,"R","Action|Crime|Thriller","Quentin Tarantino",137,8
+"http://www.moviebodycounts.com/The_Killer.htm","The Killer",1989,149,"R","Action|Crime|Romance","John Woo",111,8
+"http://www.moviebodycounts.com/King_Kong.htm","King Kong",2005,23,"PG-13","Action|Adventure|Drama","Peter Jackson",187,7.3
+"http://www.moviebodycounts.com/King_of_New_York.htm","King of New York",1990,38,"X","Crime|Thriller","Abel Ferrara",103,7
+"http://www.moviebodycounts.com/Kiss_Kiss_Bang_Bang.htm","Kiss Kiss Bang Bang",2005,16,"R","Action|Comedy|Crime","Shane Black",103,7.7
+"http://www.moviebodycounts.com/Kung_Fu_Hustle.htm","Kung Fu Hustle",2004,20,"R","Action|Comedy|Crime","Stephen Chow",99,7.8
+"http://www.moviebodycounts.com/Ladykillers_2004.htm","The Ladykillers",2004,5,"R","Comedy|Crime|Thriller","Ethan Coen|Joel Coen",104,6.2
+"http://www.moviebodycounts.com/Last_Action_Hero.htm","Last Action Hero",1993,45,"PG-13","Action|Adventure|Comedy","John McTiernan",130,6.1
+"http://www.moviebodycounts.com/Last_Boy_Scout.htm","The Last Boy Scout",1991,26,"R","Action|Comedy|Crime","Tony Scott",105,6.9
+"http://www.moviebodycounts.com/Last_House_on_the_Left.htm","The Last House on the Left",2009,6,"R","Crime|Drama|Thriller","Dennis Iliadis",110,6.6
+"http://www.moviebodycounts.com/Last_of_the_Mohicans.htm","The Last of the Mohicans",1992,172,"R","Action|Adventure|Drama","Michael Mann",112,7.8
+"http://www.moviebodycounts.com/Last_Samurai.htm","The Last Samurai",2003,558,"R","Action|Drama|History","Edward Zwick",154,7.7
+"http://www.moviebodycounts.com/Layer_Cake.htm","Layer Cake",2004,8,"R","Crime|Drama|Thriller","Matthew Vaughn",105,7.4
+"http://www.moviebodycounts.com/Legend_of_Zorro.htm","The Legend of Zorro",2005,13,"PG","Action|Adventure|Western","Martin Campbell",129,5.9
+"http://www.moviebodycounts.com/Lethal_Weapon.htm","Lethal Weapon",1987,26,"R","Action|Crime|Thriller","Richard Donner",110,7.6
+"http://www.moviebodycounts.com/Lethal_Weapon2.htm","Lethal Weapon 2",1989,33,"R","Action|Thriller","Richard Donner",114,7.2
+"http://www.moviebodycounts.com/Lethal_Weapon3.htm","Lethal Weapon 3",1992,17,"R","Action|Crime|Thriller","Richard Donner",118,6.7
+"http://www.moviebodycounts.com/Lethal_Weapon4.htm","Lethal Weapon 4",1998,30,"R","Action|Crime|Thriller","Richard Donner",127,6.6
+"http://www.moviebodycounts.com/Leon.htm","Léon: The Professional",1994,33,"R","Crime|Drama|Thriller","Luc Besson",110,8.6
+"http://www.moviebodycounts.com/Letters_from_Iwo_Jima.htm","Letters from Iwo Jima",2006,84,"R","Drama|History|War","Clint Eastwood",141,8
+"http://www.moviebodycounts.com/Lion_Witch_Wardrobe.htm","The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",2005,86,"PG","Adventure|Family|Fantasy","Andrew Adamson",143,6.9
+"http://www.moviebodycounts.com/Live_and_Let_Die.htm","Live and Let Die",1973,11,"PG","Action|Adventure|Crime","Guy Hamilton",121,6.8
+"http://www.moviebodycounts.com/Lock_Stock_and_Two_Smoking_Barrels.htm","Lock, Stock and Two Smoking Barrels",1998,16,"R","Crime|Thriller","Guy Ritchie",107,8.2
+"http://www.moviebodycounts.com/Lone_Wolf_and_Cub_White_Heaven_in_Hell.htm","Kozure ôkami: Jigoku e ikuzo! Daigorô",1974,169,"UNRATED","Action|Drama|Fantasy","Yoshiyuki Kuroda",83,7.6
+"http://www.moviebodycounts.com/Long_Kiss_Goodnight.htm","The Long Kiss Goodnight",1996,68,"R","Action|Crime|Drama","Renny Harlin",121,6.7
+"http://www.moviebodycounts.com/The_Lookout.htm","The Lookout",2007,7,"R","Crime|Drama|Thriller","Scott Frank",99,7.1
+"http://www.moviebodycounts.com/LotR_Fellowship.htm","The Lord of the Rings: The Fellowship of the Ring",2001,118,"PG-13","Action|Adventure|Fantasy","Peter Jackson",178,8.8
+"http://www.moviebodycounts.com/LotR_Two_Towers.htm","The Lord of the Rings: The Two Towers",2002,468,"PG-13","Action|Adventure|Fantasy","Peter Jackson",179,8.8
+"http://www.moviebodycounts.com/LotR_Return_ot_King.htm","The Lord of the Rings: The Return of the King",2003,836,"PG-13","Action|Adventure|Fantasy","Peter Jackson",201,8.9
+"http://www.moviebodycounts.com/Lost_City.htm","The Lost City",2005,41,"R","Drama","Andy Garcia",144,6.7
+"http://www.moviebodycounts.com/Lucky_Number_Sleven.htm","Lucky Number Slevin",2006,19,"R","Crime|Drama|Mystery","Paul McGuigan",110,7.8
+"http://www.moviebodycounts.com/Machine_Girl.htm","The Machine Girl",2008,25,"NOT RATED","Comedy|Horror|Thriller","Noboru Iguchi",96,6
+"http://www.moviebodycounts.com/Mad_Max.htm","Mad Max",1979,9,"R","Action|Adventure|Thriller","George Miller",88,7
+"http://www.moviebodycounts.com/Mad_Max_2_Road_Warrior.htm","Mad Max 2: The Road Warrior",1981,44,"R","Action|Adventure|Thriller","George Miller",94,7.6
+"http://www.moviebodycounts.com/Mad_Max_Beyond_Thunderdome.htm","Mad Max Beyond Thunderdome",1985,12,"PG-13","Action|Adventure|Thriller","George Miller|George Ogilvie",107,6.2
+"http://www.moviebodycounts.com/Magnificent_Seven.htm","The Magnificent Seven",1960,55,"NOT RATED","Western","John Sturges",128,7.8
+"http://www.moviebodycounts.com/Man_Apart.htm","A Man Apart",2003,39,"R","Action|Crime|Drama","F. Gary Gray",109,6.1
+"http://www.moviebodycounts.com/Man_with_the_Golden_Gun.htm","The Man with the Golden Gun",1974,6,"PG","Action|Adventure|Crime","Guy Hamilton",125,6.8
+"http://www.moviebodycounts.com/Marked_for_Death.htm","Marked for Death",1990,34,"R","Action|Crime|Drama","Dwight H. Little",93,5.7
+"http://www.moviebodycounts.com/Mask_of_Zorro.htm","The Mask of Zorro",1998,26,"PG-13","Action|Adventure|Comedy","Martin Campbell",136,6.7
+"http://www.moviebodycounts.com/Matrix.htm","The Matrix",1999,39,"R","Action|Adventure|Sci-Fi","Andy Wachowski|Lana Wachowski",136,8.7
+"http://www.moviebodycounts.com/Maverick.htm","Maverick",1994,4,"PG","Action|Adventure|Comedy","Richard Donner",127,6.9
+"http://www.moviebodycounts.com/Max_Payne.htm","Max Payne",2008,38,"PG-13","Action|Crime|Drama","John Moore",100,5.4
+"http://www.moviebodycounts.com/Maximum_Risk.htm","Maximum Risk",1996,18,"R","Action|Adventure|Crime","Ringo Lam",101,5.3
+"http://www.moviebodycounts.com/McBain.htm","McBain",1991,181,"R","Action|Drama","James Glickenhaus",102,4.6
+"http://www.moviebodycounts.com/Mean_Machine.htm","Mean Machine",2001,3,"R","Comedy|Drama|Sport","Barry Skolnick",99,6.5
+"http://www.moviebodycounts.com/Memento.htm","Memento",2000,4,"R","Mystery|Thriller","Christopher Nolan",113,8.6
+"http://www.moviebodycounts.com/Milk.htm","Milk",2008,4,"R","Biography|Drama|History","Gus Van Sant",128,7.7
+"http://www.moviebodycounts.com/Minority_Report.htm","Minority Report",2002,4,"PG-13","Action|Mystery|Sci-Fi","Steven Spielberg",145,7.7
+"http://www.moviebodycounts.com/Missing_in_Action.htm","Missing in Action",1984,100,"R","Action|Adventure|Drama","Joseph Zito",101,5.2
+"http://www.moviebodycounts.com/Mission_Impossible.htm","Mission: Impossible",1996,9,"PG-13","Action|Adventure|Thriller","Brian De Palma",110,7
+"http://www.moviebodycounts.com/Mission_Impossible2.htm","Mission: Impossible II",2000,37,"PG-13","Action|Adventure|Thriller","John Woo",123,6
+"http://www.moviebodycounts.com/Mission_Impossible_III.htm","Mission: Impossible III",2006,23,"PG-13","Action|Adventure|Thriller","J.J. Abrams",126,6.8
+"http://www.moviebodycounts.com/Mist_The.htm","The Mist",2007,92,"R","Horror|Sci-Fi|Thriller","Frank Darabont",126,7.2
+"http://www.moviebodycounts.com/Mortal_Kombat.htm","Mortal Kombat",1995,11,"PG-13","Action|Adventure|Fantasy","Paul W.S. Anderson",101,5.7
+"http://www.moviebodycounts.com/Mr_&_Mrs_Smith.htm","Mr. & Mrs. Smith",2005,43,"PG-13","Action|Comedy|Romance","Doug Liman",120,6.4
+"http://www.moviebodycounts.com/Mr_Brooks.htm","Mr. Brooks",2007,18,"R","Crime|Drama|Mystery","Bruce A. Evans",120,7.4
+"http://www.moviebodycounts.com/Mummy.htm","The Mummy",1999,155,"PG-13","Action|Adventure|Fantasy","Stephen Sommers",125,6.9
+"http://www.moviebodycounts.com/Munich.htm","Munich",2005,49,"R","Drama|History|Thriller","Steven Spielberg",164,7.7
+"http://www.moviebodycounts.com/Musketeer.htm","The Musketeer",2001,56,"PG-13","Action|Drama|Adventure","Peter Hyams",104,4.7
+"http://www.moviebodycounts.com/My_Bloody_Valentine_3D.htm","My Bloody Valentine",2009,24,"R","Horror|Thriller","Patrick Lussier",101,5.5
+"http://www.moviebodycounts.com/New_World.htm","The New World",2005,28,"PG-13","Biography|Drama|History","Terrence Malick",135,6.7
+"http://www.moviebodycounts.com/Nightmare_on_Elm_Street.htm","A Nightmare on Elm Street",1984,4,"R","Horror","Wes Craven",91,7.5
+"http://www.moviebodycounts.com/No_Country_for_Old_Men.htm","No Country for Old Men",2007,22,"R","Crime|Drama|Thriller","Ethan Coen|Joel Coen",122,8.2
+"http://www.moviebodycounts.com/Number_23.htm","The Number 23",2007,10,"R","Drama|Mystery|Thriller","Joel Schumacher",101,6.3
+"http://www.moviebodycounts.com/Octopussy.htm","Octopussy",1983,46,"PG","Action|Adventure|Crime","John Glen",131,6.6
+"http://www.moviebodycounts.com/The_Omen_666.htm","The Omen",2006,8,"R","Horror|Mystery|Thriller","John Moore",110,5.5
+"http://www.moviebodycounts.com/On_Deadly_Ground.htm","On Deadly Ground",1994,25,"R","Action|Adventure|Thriller","Steven Seagal",101,4.2
+"http://www.moviebodycounts.com/On_Her_Majestys_Secret_Service.htm","On Her Majesty's Secret Service",1969,26,"M","Action|Adventure|Crime","Peter R. Hunt",142,6.8
+"http://www.moviebodycounts.com/Once_a_Thief.htm","Zong heng si hai",1991,59,"R","Action|Comedy|Crime","John Woo",103,6.8
+"http://www.moviebodycounts.com/Once_Upon_A_Time_In_Mexico.htm","Once Upon a Time in Mexico",2003,99,"R","Action|Thriller","Robert Rodriguez",102,6.4
+"http://www.moviebodycounts.com/Operation_Delta_Force.htm","Operation Delta Force",1997,120,"R","Action|Thriller","Sam Firstenberg",93,3.2
+"http://www.moviebodycounts.com/Out_For_Justice.htm","Out for Justice",1991,20,"R","Action|Thriller|Crime","John Flynn",91,5.9
+"http://www.moviebodycounts.com/Out_of_Sight.htm","Out of Sight",1998,9,"R","Comedy|Crime|Romance","Steven Soderbergh",123,7.1
+"http://www.moviebodycounts.com/Outlaw_Josey_Wales.htm","The Outlaw Josey Wales",1976,120,"PG","Western","Clint Eastwood",135,7.9
+"http://www.moviebodycounts.com/Pans_Labyrinth.htm","El laberinto del fauno",2006,30,"R","Drama|Fantasy|War","Guillermo del Toro",118,8.3
+"http://www.moviebodycounts.com/Patriot_1998.htm","The Patriot",1998,42,"R","Action|Thriller","Dean Semler",90,4
+"http://www.moviebodycounts.com/The_Patriot.htm","The Patriot",2000,123,"R","Action|Drama|War","Roland Emmerich",165,7.1
+"http://www.moviebodycounts.com/Patriot_Games.htm","Patriot Games",1992,35,"R","Action|Crime|Drama","Phillip Noyce",117,6.9
+"http://www.moviebodycounts.com/Payback.htm","Payback",1999,18,"R","Action|Crime|Drama","Brian Helgeland",100,7.1
+"http://www.moviebodycounts.com/Pearl_Harbor.htm","Pearl Harbor",2001,153,"PG-13","Action|Drama|Romance","Michael Bay",183,5.9
+"http://www.moviebodycounts.com/Phantom_of_the_Opera.htm","The Phantom of the Opera",2004,3,"PG-13","Drama|Musical|Romance","Joel Schumacher",143,7.3
+"http://www.moviebodycounts.com/Pirates_of_the_Caribbean.htm","Pirates of the Caribbean: The Curse of the Black Pearl",2003,42,"PG-13","Action|Adventure|Fantasy","Gore Verbinski",143,8.1
+"http://www.moviebodycounts.com/PotC_Dead_Mans_Chest.htm","Pirates of the Caribbean: Dead Man's Chest",2006,90,"PG-13","Action|Adventure|Fantasy","Gore Verbinski",151,7.3
+"http://www.moviebodycounts.com/Plan_9.htm","Plan 9 from Outer Space",1959,7,"UNRATED","Action|Adventure|Horror","Edward D. Wood Jr.",79,3.9
+"http://www.moviebodycounts.com/Platoon_Leader.htm","Platoon Leader",1988,106,"R","War|Drama","Aaron Norris",97,5.2
+"http://www.moviebodycounts.com/Point_of_No_Return.htm","Point of No Return",1993,35,"R","Action|Crime|Thriller","John Badham",109,5.9
+"http://www.moviebodycounts.com/Predator.htm","Predator",1987,64,"R","Action|Adventure|Sci-Fi","John McTiernan",107,7.8
+"http://www.moviebodycounts.com/The_Prestige.htm","The Prestige",2006,7,"PG-13","Drama|Mystery|Thriller","Christopher Nolan",130,8.5
+"http://www.moviebodycounts.com/Prince_of_Jutland.htm","Royal Deceit",1994,38,"R","Adventure|Drama","Gabriel Axel",103,5.9
+"http://www.moviebodycounts.com/Leon.htm","Léon: The Professional",1994,33,"R","Crime|Drama|Thriller","Luc Besson",110,8.6
+"http://www.moviebodycounts.com/Pulp.htm","Pulp",1972,6,"PG","Comedy|Crime|Drama","Mike Hodges",95,6
+"http://www.moviebodycounts.com/Pulp_Fiction.htm","Pulp Fiction",1994,10,"R","Crime|Drama|Thriller","Quentin Tarantino",154,9
+"http://www.moviebodycounts.com/The_Punisher_1989.htm","The Punisher",1989,96,"UNRATED","Action|Crime|Drama","Mark Goldblatt",89,5.6
+"http://www.moviebodycounts.com/Push.htm","Push",2009,24,"PG-13","Action|Sci-Fi|Thriller","Paul McGuigan",111,6.1
+"http://www.moviebodycounts.com/Raiders_of_the_Lost_Ark.htm","Raiders of the Lost Ark",1981,84,"PG","Action|Adventure","Steven Spielberg",115,8.6
+"http://www.moviebodycounts.com/Rambo_2008.htm","Rambo",2008,247,"R","Action|Thriller|War","Sylvester Stallone",92,7.1
+"http://www.moviebodycounts.com/Rambo_First_Blood.htm","Rambo: First Blood Part II",1985,67,"R","Action|War","George P. Cosmatos",96,6.3
+"http://www.moviebodycounts.com/Rambo_III.htm","Rambo III",1988,127,"R","Action|Adventure|Thriller","Peter MacDonald",102,5.5
+"http://www.moviebodycounts.com/Raw_Deal.htm","Raw Deal",1986,38,"R","Action|Crime|Thriller","John Irvin",106,5.3
+"http://www.moviebodycounts.com/Red_Dawn.htm","Red Dawn",1984,118,"PG-13","Action|Adventure|Drama","John Milius",114,6.3
+"http://www.moviebodycounts.com/Red_Planet.htm","Red Planet",2000,4,"PG-13","Sci-Fi|Action|Thriller","Antony Hoffman",106,5.6
+"http://www.moviebodycounts.com/Red_Scorpion.htm","Red Scorpion",1988,104,"R","Action|Adventure","Joseph Zito",105,4.7
+"http://www.moviebodycounts.com/Reign_of_Fire.htm","Reign of Fire",2002,32,"PG-13","Action|Adventure|Fantasy","Rob Bowman",101,6.1
+"http://www.moviebodycounts.com/Replacement_Killers.htm","The Replacement Killers",1998,38,"R","Action|Crime|Drama","Antoine Fuqua",87,6.1
+"http://www.moviebodycounts.com/Reservoir_Dogs.htm","Reservoir Dogs",1992,12,"R","Crime|Thriller","Quentin Tarantino",99,8.4
+"http://www.moviebodycounts.com/Resident_Evil_Apocalypse.htm","Resident Evil: Apocalypse",2004,246,"R","Action|Horror|Sci-Fi","Alexander Witt",94,6.1
+"http://www.moviebodycounts.com/Resident_Evil_Extinction.htm","Resident Evil: Extinction",2007,248,"R","Action|Horror|Sci-Fi","Russell Mulcahy",94,6.3
+"http://www.moviebodycounts.com/Riders.htm","Riders",2002,6,"R","Action|Crime|Thriller","Gérard Pirès",83,5.4
+"http://www.moviebodycounts.com/Ripleys_Game.htm","Ripley's Game",2002,11,"R","Crime|Drama|Mystery","Liliana Cavani",110,6.7
+"http://www.moviebodycounts.com/Ritana.htm","Returner",2002,91,"R","Action|Adventure|Sci-Fi","Takashi Yamazaki",116,6.5
+"http://www.moviebodycounts.com/Road_House.htm","Road House",1989,7,"R","Action|Thriller","Rowdy Herrington",114,6.3
+"http://www.moviebodycounts.com/Robocop.htm","RoboCop",1987,34,"R","Action|Crime|Sci-Fi","Paul Verhoeven",102,7.5
+"http://www.moviebodycounts.com/RocknRolla.htm","RocknRolla",2008,22,"R","Action|Crime|Thriller","Guy Ritchie",114,7.3
+"http://www.moviebodycounts.com/The_Rock.htm","The Rock",1996,24,"R","Action|Adventure|Thriller","Michael Bay",136,7.4
+"http://www.moviebodycounts.com/Romeo_is_Bleeding.htm","Romeo Is Bleeding",1993,15,"R","Crime|Drama|Thriller","Peter Medak",100,6.6
+"http://www.moviebodycounts.com/Ronin.htm","Ronin",1998,34,"R","Action|Adventure|Crime","John Frankenheimer",122,7.3
+"http://www.moviebodycounts.com/Prince_of_Jutland.htm","Royal Deceit",1994,38,"R","Adventure|Drama","Gabriel Axel",103,5.9
+"http://www.moviebodycounts.com/Rundown.htm","The Rundown",2003,46,"PG-13","Action|Adventure|Comedy","Peter Berg",104,6.7
+"http://www.moviebodycounts.com/The_Running_Man.htm","The Running Man",1987,78,"R","Action|Sci-Fi|Thriller","Paul Michael Glaser",101,6.6
+"http://www.moviebodycounts.com/Running_Scared_2006.htm","Running Scared",2006,22,"R","Action|Crime|Drama","Wayne Kramer",122,7.5
+"http://www.moviebodycounts.com/Sahara.htm","Sahara",2005,68,"PG-13","Action|Adventure|Comedy","Breck Eisner",124,5.9
+"http://www.moviebodycounts.com/Saving_Private_Ryan.htm","Saving Private Ryan",1998,255,"R","Action|Drama|War","Steven Spielberg",169,8.6
+"http://www.moviebodycounts.com/Scarface.htm","Scarface",1983,44,"R","Crime|Drama","Brian De Palma",170,8.3
+"http://www.moviebodycounts.com/Scorpion_King.htm","The Scorpion King",2002,105,"PG-13","Action|Adventure|Fantasy","Chuck Russell",92,5.5
+"http://www.moviebodycounts.com/Secret_of_NIMH.htm","The Secret of NIMH",1982,12,"G","Animation|Drama|Family","Don Bluth",82,7.6
+"http://www.moviebodycounts.com/Secret_Window.htm","Secret Window",2004,4,"PG-13","Mystery|Thriller","David Koepp",96,6.6
+"http://www.moviebodycounts.com/Serenity.htm","Serenity",2005,74,"PG-13","Action|Adventure|Sci-Fi","Joss Whedon",119,8
+"http://www.moviebodycounts.com/Severance.htm","Severance",2006,28,"R","Comedy|Horror|Thriller","Christopher Smith",96,6.6
+"http://www.moviebodycounts.com/Shaft_2000.htm","Shaft",2000,22,"R","Action|Crime|Thriller","John Singleton",99,5.9
+"http://www.moviebodycounts.com/Shaun_of_the_Dead.htm","Shaun of the Dead",2004,60,"R","Comedy|Horror","Edgar Wright",99,8
+"http://www.moviebodycounts.com/Shawshank_Redemption.htm","The Shawshank Redemption",1994,4,"R","Crime|Drama","Frank Darabont",142,9.3
+"http://www.moviebodycounts.com/Shoot_Em_Up.htm","Shoot 'Em Up",2007,151,"R","Action|Comedy|Crime","Michael Davis",86,6.8
+"http://www.moviebodycounts.com/Showdown_In_Little_Tokyo.htm","Showdown in Little Tokyo",1991,48,"R","Action|Comedy|Crime","Mark L. Lester",79,5.9
+"http://www.moviebodycounts.com/Signs.htm","Signs",2002,6,"PG-13","Drama|Sci-Fi|Thriller","M. Night Shyamalan",106,6.7
+"http://www.moviebodycounts.com/Silence_of_the_Lambs.htm","The Silence of the Lambs",1991,8,"R","Crime|Drama|Thriller","Jonathan Demme",118,8.6
+"http://www.moviebodycounts.com/Silent_Trigger.htm","Silent Trigger",1996,35,"R","Action|Drama|Thriller","Russell Mulcahy",93,5.5
+"http://www.moviebodycounts.com/Sin_City.htm","Sin City",2005,53,"R","Crime|Thriller","Frank Miller|Robert Rodriguez|1 more credit",124,8.2
+"http://www.moviebodycounts.com/Sleepy_Hollow.htm","Sleepy Hollow",1999,25,"R","Adventure|Mystery","Tim Burton",105,7.5
+"http://www.moviebodycounts.com/Slumdog_Millionaire.htm","Slumdog Millionaire",2008,10,"R","Drama|Romance|Thriller","Danny Boyle|Loveleen Tandan",120,8.1
+"http://www.moviebodycounts.com/Smokin_Aces.htm","Smokin' Aces",2006,47,"R","Action|Crime|Drama","Joe Carnahan",108,6.7
+"http://www.moviebodycounts.com/Snakes_on_a_Plane.htm","Snakes on a Plane",2006,120,"R","Action|Thriller","David R. Ellis",105,5.7
+"http://www.moviebodycounts.com/Snatch.htm","Snatch.",2000,26,"R","Crime|Thriller","Guy Ritchie",102,8.3
+"http://www.moviebodycounts.com/Spartan.htm","Spartan",2004,15,"R","Action|Crime|Drama","David Mamet",106,6.6
+"http://www.moviebodycounts.com/Speed.htm","Speed",1994,7,"R","Action|Crime|Thriller","Jan de Bont",116,7.2
+"http://www.moviebodycounts.com/The_Spy_Who_Loved_Me.htm","The Spy Who Loved Me",1977,73,"PG","Action|Adventure|Crime","Lewis Gilbert",125,7.1
+"http://www.moviebodycounts.com/Stardust.htm","Stardust",2007,22,"PG-13","Adventure|Family|Fantasy","Matthew Vaughn",127,7.8
+"http://www.moviebodycounts.com/Star_Trek_Nemesis.htm","Star Trek: Nemesis",2002,54,"PG-13","Action|Adventure|Sci-Fi","Stuart Baird",116,6.4
+"http://www.moviebodycounts.com/Star_Wars_I.htm","Star Wars: Episode I - The Phantom Menace",1999,34,"PG","Action|Adventure|Fantasy","George Lucas",136,6.5
+"http://www.moviebodycounts.com/Star_Wars_II.htm","Star Wars: Episode II - Attack of the Clones",2002,55,"PG","Action|Adventure|Fantasy","George Lucas",142,6.8
+"http://www.moviebodycounts.com/Star_Wars_III.htm","Star Wars: Episode III - Revenge of the Sith",2005,115,"PG-13","Action|Adventure|Fantasy","George Lucas",140,7.7
+"http://www.moviebodycounts.com/Star_Wars_New_Hope.htm","Star Wars",1977,75,"PG","Action|Adventure|Fantasy","George Lucas",121,8.8
+"http://www.moviebodycounts.com/Star_Wars_Empire.htm","Star Wars: Episode V - The Empire Strikes Back",1980,30,"PG","Action|Adventure|Sci-Fi","Irvin Kershner",124,8.8
+"http://www.moviebodycounts.com/Star_Wars_VI_Jedi.htm","Star Wars: Episode VI - Return of the Jedi",1983,69,"PG","Action|Adventure|Fantasy","Richard Marquand",134,8.4
+"http://www.moviebodycounts.com/Starship_Troopers.htm","Starship Troopers",1997,512,"R","Action|Sci-Fi","Paul Verhoeven",129,7.2
+"http://www.moviebodycounts.com/Riders.htm","Riders",2002,6,"R","Action|Crime|Thriller","Gérard Pirès",83,5.4
+"http://www.moviebodycounts.com/Stone_Cold.htm","Stone Cold",1991,45,"R","Action|Crime|Drama","Craig R. Baxley",92,5.7
+"http://www.moviebodycounts.com/Strange_Days.htm","Strange Days",1995,12,"R","Crime|Drama|Mystery","Kathryn Bigelow",145,7.2
+"http://www.moviebodycounts.com/Strange_Wilderness.htm","Strange Wilderness",2008,30,"R","Comedy","Fred Wolf",87,5.2
+"http://www.moviebodycounts.com/Summer_of_Sam.htm","Summer of Sam",1999,10,"R","Crime|Drama|Romance","Spike Lee",142,6.6
+"http://www.moviebodycounts.com/Sunshine.htm","Sunshine",2007,30,"R","Adventure|Sci-Fi|Thriller","Danny Boyle",107,7.3
+"http://www.moviebodycounts.com/Super_Mario_Bros.htm","Super Mario Bros.",1993,8,"PG","Adventure|Comedy|Family","Annabel Jankel|Rocky Morton",104,4
+"http://www.moviebodycounts.com/Superman_Returns.htm","Superman Returns",2006,10,"PG-13","Action|Adventure|Fantasy","Bryan Singer",154,6.2
+"http://www.moviebodycounts.com/Sweeney_Todd.htm","Sweeney Todd: The Demon Barber of Fleet Street",2007,12,"R","Drama|Horror|Musical","Tim Burton",116,7.5
+"http://www.moviebodycounts.com/Sweepers.htm","Sweepers",1998,74,"R","Action|Adventure|Drama","Keoni Waxman",96,3.4
+"http://www.moviebodycounts.com/Swordfish.htm","Swordfish",2001,41,"R","Action|Crime|Thriller","Dominic Sena",99,6.5
+"http://www.moviebodycounts.com/Syriana.htm","Syriana",2005,22,"R","Drama|Thriller","Stephen Gaghan",128,7
+"http://www.moviebodycounts.com/Taken.htm","Taken",2008,35,"PG-13","Action|Crime|Thriller","Pierre Morel",93,7.9
+"http://www.moviebodycounts.com/Tango_&_Cash.htm","Tango & Cash",1989,20,"R","Action|Comedy|Crime","Andrey Konchalovskiy|Albert Magnoli",104,6.2
+"http://www.moviebodycounts.com/Taxi_Driver.htm","Taxi Driver",1976,4,"R","Crime|Drama","Martin Scorsese",113,8.4
+"http://www.moviebodycounts.com/Team_America.htm","Team America: World Police",2004,79,"R","Action|Adventure|Comedy","Trey Parker",98,7.2
+"http://www.moviebodycounts.com/Terminator.htm","The Terminator",1984,34,"R","Action|Sci-Fi","James Cameron",107,8.1
+"http://www.moviebodycounts.com/Terminator2.htm","Terminator 2: Judgment Day",1991,25,"R","Action|Sci-Fi|Thriller","James Cameron",137,8.5
+"http://www.moviebodycounts.com/Terminator3.htm","Terminator 3: Rise of the Machines",2003,14,"R","Action|Sci-Fi|Thriller","Jonathan Mostow",109,6.4
+"http://www.moviebodycounts.com/There_Will_Be_Blood.htm","There Will Be Blood",2007,4,"R","Drama","Paul Thomas Anderson",158,8.1
+"http://www.moviebodycounts.com/The_Thing.htm","The Thing",1982,21,"R","Horror|Mystery|Sci-Fi","John Carpenter",109,8.2
+"http://www.moviebodycounts.com/Things_to_Do_in_Denver.htm","Things to Do in Denver When You're Dead",1995,15,"R","Crime|Drama","Gary Fleder",115,6.8
+"http://www.moviebodycounts.com/Third_Man.htm","The Third Man",1949,4,"NOT RATED","Film-Noir|Mystery|Thriller","Carol Reed",93,8.4
+"http://www.moviebodycounts.com/Thunderball.htm","Thunderball",1965,47,"APPROVED","Action|Adventure|Crime","Terence Young",130,7
+"http://www.moviebodycounts.com/Timeline.htm","Timeline",2003,65,"PG-13","Action|Adventure|Sci-Fi","Richard Donner",116,5.5
+"http://www.moviebodycounts.com/Titanic.htm","Titanic",1997,307,"PG-13","Drama|Romance","James Cameron",194,7.7
+"http://www.moviebodycounts.com/To_Die_For.htm","To Die For",1995,2,"R","Comedy|Crime|Drama","Gus Van Sant",106,6.8
+"http://www.moviebodycounts.com/Tombstone.htm","Tombstone",1993,55,"R","Action|Drama|History","George P. Cosmatos|Kevin Jarre",130,7.8
+"http://www.moviebodycounts.com/Total_Recall.htm","Total Recall",1990,77,"R","Action|Adventure|Sci-Fi","Paul Verhoeven",113,7.5
+"http://www.moviebodycounts.com/Transformers_the_Movie.htm","The Transformers: The Movie",1986,47,"PG","Animation|Action|Adventure","Nelson Shin",84,7.3
+"http://www.moviebodycounts.com/Transporter.htm","The Transporter",2002,8,"PG-13","Action|Crime|Thriller","Corey Yuen",92,6.8
+"http://www.moviebodycounts.com/Transporter2.htm","Transporter 2",2005,11,"PG-13","Action|Crime|Thriller","Louis Leterrier",87,6.2
+"http://www.moviebodycounts.com/Troy.htm","Troy",2004,572,"R","Adventure|Drama","Wolfgang Petersen",163,7.2
+"http://www.moviebodycounts.com/True_Lies.htm","True Lies",1994,71,"R","Action|Thriller","James Cameron",141,7.2
+"http://www.moviebodycounts.com/True_Romance.htm","True Romance",1993,21,"R","Crime|Thriller","Tony Scott",120,8
+"http://www.moviebodycounts.com/Unbreakable.htm","Unbreakable",2000,4,"PG-13","Drama|Mystery|Sci-Fi","M. Night Shyamalan",106,7.2
+"http://www.moviebodycounts.com/Under_Siege.htm","Under Siege",1992,65,"R","Action|Thriller","Andrew Davis",103,6.4
+"http://www.moviebodycounts.com/Under_Siege2.htm","Under Siege 2: Dark Territory",1995,47,"R","Action|Thriller","Geoff Murphy",100,5.3
+"http://www.moviebodycounts.com/Underworld.htm","Underworld",2003,58,"R","Action|Fantasy|Thriller","Len Wiseman",121,7
+"http://www.moviebodycounts.com/Underworld_Evolution.htm","Underworld: Evolution",2006,75,"R","Action|Fantasy|Sci-Fi","Len Wiseman",106,6.7
+"http://www.moviebodycounts.com/Universal_Soldier.htm","Universal Soldier",1992,47,"R","Action|Drama|Sci-Fi","Roland Emmerich",102,5.9
+"http://www.moviebodycounts.com/Usual_Suspects.htm","The Usual Suspects",1995,39,"R","Crime|Mystery|Thriller","Bryan Singer",106,8.7
+"http://www.moviebodycounts.com/Waist_Deep.htm","Waist Deep",2006,6,"R","Action|Crime|Drama","Vondie Curtis-Hall",97,5.9
+"http://www.moviebodycounts.com/Walk_Hard.htm","Walk Hard: The Dewey Cox Story",2007,5,"R","Comedy|Drama|Music","Jake Kasdan",96,6.7
+"http://www.moviebodycounts.com/Walking_Tall_%282004%29.htm","Walking Tall",2004,6,"PG-13","Action|Crime","Kevin Bray",86,6.2
+"http://www.moviebodycounts.com/War.htm","War",2007,97,"R","Action|Crime|Thriller","Philip G. Atwell",103,6.2
+"http://www.moviebodycounts.com/War_Inc.htm","War, Inc.",2008,73,"R","Action|Comedy|Thriller","Joshua Seftel",107,5.7
+"http://www.moviebodycounts.com/War_of_the_Worlds.htm","War of the Worlds",2005,104,"PG-13","Adventure|Sci-Fi|Thriller","Steven Spielberg",116,6.5
+"http://www.moviebodycounts.com/Wasabi.htm","Wasabi",2001,22,"R","Action|Drama|Comedy","Gérard Krawczyk",94,6.6
+"http://www.moviebodycounts.com/Way_of_the_Gun.htm","The Way of the Gun",2000,18,"R","Action|Crime|Drama","Christopher McQuarrie",119,6.7
+"http://www.moviebodycounts.com/We_Were_Soldiers.htm","We Were Soldiers",2002,305,"R","Action|Drama|History","Randall Wallace",138,7.1
+"http://www.moviebodycounts.com/Where_Eagles_Dare.htm","Where Eagles Dare",1968,100,"M","Action|Adventure|War","Brian G. Hutton",158,7.7
+"http://www.moviebodycounts.com/Wild_Bunch.htm","The Wild Bunch",1969,145,"R","Western","Sam Peckinpah",145,8.1
+"http://www.moviebodycounts.com/Yakuza.htm","The Yakuza",1974,31,"R","Action|Crime|Drama","Sydney Pollack",112,7.3
+"http://www.moviebodycounts.com/The_Yards.htm","The Yards",2000,2,"R","Crime|Drama|Romance","James Gray",115,6.4
+"http://www.moviebodycounts.com/You_Kill_Me.htm","You Kill Me",2007,10,"R","Comedy|Crime|Romance","John Dahl",93,6.5
+"http://www.moviebodycounts.com/You_Only_Live_Twice.htm","You Only Live Twice",1967,91,"APPROVED","Action|Adventure|Crime","Lewis Gilbert",117,6.9
+"http://www.moviebodycounts.com/Zodiac.htm","Zodiac",2007,3,"R","Crime|Drama|Mystery","David Fincher",157,7.7
+"http://www.moviebodycounts.com/Zoolander.htm","Zoolander",2001,4,"PG-13","Comedy","Ben Stiller",89,6.6
+"http://www.moviebodycounts.com/Zulu.htm","Zulu",1964,140,"UNRATED","Drama|History|War","Cy Endfield",138,7.8

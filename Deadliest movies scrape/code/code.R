@@ -136,6 +136,14 @@ for (i in 1:length(data$URL)) {
   print(paste('Film', i, 'of', length(data$URL), 'done.'))
 }
 
+# Save scraped data in a .csv file for future use
+write.csv(data, "dataR.csv")
+
+
+
+
+
+
 
 
 
