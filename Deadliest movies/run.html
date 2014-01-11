@@ -54,7 +54,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <span class="ch">from</span> pandas <span class="ch">import</span> *</code></pre>
 <p>Now let’s load the data for today’s job. The raw data were scraped by Randy (using Python) from <a href="http://www.MovieBodyCounts.com">www.MovieBodyCounts.com</a> and he generously provided the result of his hard work on FigShare at this address: <a href="http://dx.doi.org/10.6084/m9.figshare.889719">http://dx.doi.org/10.6084/m9.figshare.889719</a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load data into a data frame</span>
-body.count.data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;http://files.figshare.com/1332945/film_death_counts.csv&#39;</span>)</code></pre>
+body.count.data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;http://files.figshare.com/1332945/film_death_counts.csv&quot;</span>)</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Read the data into a pandas DataFrame</span>
 body_count_data = read_csv(<span class="st">&quot;http://files.figshare.com/1332945/film_death_counts.csv&quot;</span>)</code></pre>
 <p>For each movie, the data frame contains a column for the total number of on screen deaths (“Body_Count”) and a column for the duration (“Length_Minutes”). We will now create an extra column for the number of on screen deaths per minute of each movie (“Deaths_Per_Minute”)</p>
@@ -81,7 +81,7 @@ body_count_data = body_count_data.sort(<span class="st">&quot;Deaths_Per_Minute&
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Combine film title and release date into a new factor column with levels</span>
 <span class="co"># ordered by ascending violence</span>
 body.count.data &lt;-<span class="st"> </span><span class="kw">within</span>(body.count.data, {
-  Full_Title &lt;-<span class="st"> </span><span class="kw">paste0</span>(Film, <span class="st">&#39; (&#39;</span>, Year, <span class="st">&#39;)&#39;</span>)
+  Full_Title &lt;-<span class="st"> </span><span class="kw">paste0</span>(Film, <span class="st">&quot; (&quot;</span>, Year, <span class="st">&quot;)&quot;</span>)
   ord &lt;-<span class="st"> </span><span class="kw">order</span>(Deaths_Per_Minute, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)
   Full_Title &lt;-<span class="st"> </span><span class="kw">ordered</span>(Full_Title, <span class="dt">levels =</span> <span class="kw">rev</span>(<span class="kw">unique</span>(Full_Title[ord])))  <span class="co"># some films are duplicated! Bad Randy!</span>
 })</code></pre>
@@ -122,7 +122,7 @@ yticks(<span class="dt">range</span>(<span class="dt">len</span>(body_count_data
 my.bloody.theme &lt;-<span class="st"> </span><span class="kw">within</span>(<span class="kw">trellis.par.get</span>(), {    <span class="co"># Initialize theme with default value</span>
   axis.line$col &lt;-<span class="st"> </span><span class="ot">NA</span>                             <span class="co"># Remove axes </span>
   plot.polygon &lt;-<span class="st"> </span><span class="kw">within</span>(plot.polygon, {
-    col &lt;-<span class="st"> &#39;#8A0606&#39;</span>                              <span class="co"># Set bar colors to a nice bloody red</span>
+    col &lt;-<span class="st"> &quot;#8A0606&quot;</span>                              <span class="co"># Set bar colors to a nice bloody red</span>
     border &lt;-<span class="st"> </span><span class="ot">NA</span>                                  <span class="co"># Remove bars&#39; outline</span>
   })
   axis.text$cex &lt;-<span class="st"> </span><span class="dv">1</span>                              <span class="co"># Default axis text size is a bit small. Make it bigger</span>
@@ -171,16 +171,16 @@ ax.xaxis.grid(color=<span class="st">&quot;white&quot;</span>, linestyle=<span c
 <p>Finally, the last thing we want to add to our graph is the number of deaths per minute and the duration of each movie on the right of the graph.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Combine number of on screen death per minute and duration of the movies into a new character string column</span>
 body.count.data &lt;-<span class="st"> </span><span class="kw">within</span>(body.count.data, {
-  Deaths_Per_Minute_With_Length =<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">round</span>(body.count.data$Deaths_Per_Minute, <span class="dt">digits=</span><span class="dv">2</span>), <span class="st">&#39; (&#39;</span>, body.count.data$Length_Minutes, <span class="st">&#39; mins)&#39;</span>)
+  Deaths_Per_Minute_With_Length =<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">round</span>(body.count.data$Deaths_Per_Minute, <span class="dt">digits=</span><span class="dv">2</span>), <span class="st">&quot; (&quot;</span>, body.count.data$Length_Minutes, <span class="st">&quot; mins)&quot;</span>)
 })
 
 <span class="co"># Add number of on screen deaths per minute and duration of movies at the end of each bar </span>
 graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class="kw">layer</span>(<span class="kw">with</span>(body.count.data, 
   <span class="kw">panel.text</span>(
-    Deaths_Per_Minute,                 <span class="co"># x position of the text</span>
+    Deaths_Per_Minute,                  <span class="co"># x position of the text</span>
     <span class="dv">25</span>:<span class="dv">1</span>,                               <span class="co"># y position of the text</span>
-    <span class="dt">pos =</span> <span class="dv">4</span>,                           <span class="co"># Position of the text relative to the x and y position (4 = to the right)</span>
-    Deaths_Per_Minute_With_Length)))   <span class="co"># Text to display                                     </span>
+    <span class="dt">pos =</span> <span class="dv">4</span>,                            <span class="co"># Position of the text relative to the x and y position (4 = to the right)</span>
+    Deaths_Per_Minute_With_Length)))    <span class="co"># Text to display                                     </span>
 
 <span class="co"># Print graph</span>
 <span class="kw">print</span>(graph)</code></pre>
@@ -209,15 +209,16 @@ autolabel(rects)</code></pre>
 <h4 id="r-bonus">3 - R bonus</h4>
 <p>Just for fun, I decided to add to the R graph a little accessory in relation with the general theme of this data set.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load additional libraries</span>
-<span class="kw">library</span>(jpeg);  <span class="co"># To read JPG images</span>
-<span class="kw">library</span>(grid);  <span class="co"># Graphics library with better image plotting capabilities</span>
+<span class="kw">library</span>(jpeg)  <span class="co"># To read JPG images</span>
+<span class="kw">library</span>(grid)  <span class="co"># Graphics library with better image plotting capabilities</span>
 
-<span class="co"># Download a pretty background image</span>
-<span class="kw">download.file</span>(<span class="dt">url =</span> <span class="st">&#39;http://www.theswarmlab.com/wp-content/uploads/2014/01/bloody_gun.jpg&#39;</span>, 
-              <span class="dt">destfile =</span> <span class="st">&#39;bloody_gun.jpg&#39;</span>, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)
+<span class="co"># Download a pretty background image; mode is set to &quot;wb&quot; because it seems that</span>
+<span class="co"># Windows needs it. I don&#39;t use Windows, I can&#39;t confirm</span>
+<span class="kw">download.file</span>(<span class="dt">url =</span> <span class="st">&quot;http://www.theswarmlab.com/wp-content/uploads/2014/01/bloody_gun.jpg&quot;</span>, 
+              <span class="dt">destfile =</span> <span class="st">&quot;bloody_gun.jpg&quot;</span>, <span class="dt">quiet =</span> <span class="ot">TRUE</span>, <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)
 
 <span class="co"># Load gun image using &quot;readJPEG&quot; from the &quot;jpeg&quot; package</span>
-img &lt;-<span class="st"> </span><span class="kw">readJPEG</span>(<span class="st">&#39;bloody_gun.jpg&#39;</span>)
+img &lt;-<span class="st"> </span><span class="kw">readJPEG</span>(<span class="st">&quot;bloody_gun.jpg&quot;</span>)
 
 <span class="co"># Add image to graph using &quot;grid.raster&quot; from the &quot;grid&quot; package</span>
 graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class="kw">layer_</span>(
@@ -226,7 +227,7 @@ graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class=
     <span class="dt">x =</span> <span class="dv">1</span>,                          <span class="co"># x location of image &quot;Normalised Parent Coordinates&quot;</span>
     <span class="dt">y =</span> <span class="dv">0</span>,                          <span class="co"># y location of image &quot;Normalised Parent Coordinates&quot;</span>
     <span class="dt">height =</span> <span class="fl">0.7</span>,                   <span class="co"># Height of the image. 1 indicates that the image height is equal to the graph height</span>
-    <span class="dt">just =</span> <span class="kw">c</span>(<span class="st">&#39;right&#39;</span>, <span class="st">&#39;bottom&#39;</span>)))   <span class="co"># Justification of the image relative to its x and y locations</span>
+    <span class="dt">just =</span> <span class="kw">c</span>(<span class="st">&quot;right&quot;</span>, <span class="st">&quot;bottom&quot;</span>)))   <span class="co"># Justification of the image relative to its x and y locations</span>
 
 <span class="co"># Print graph</span>
 <span class="kw">print</span>(graph)</code></pre>

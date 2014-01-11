@@ -34,7 +34,7 @@ library(latticeExtra)   # Addition to "lattice" that makes layering graphs a
                         # breathe, and I'm a lazy person, so why not
 
 # Load data into a data frame
-body.count.data <- within(read.csv('http://files.figshare.com/1332945/film_death_counts.csv'), {
+body.count.data <- within(read.csv("http://files.figshare.com/1332945/film_death_counts.csv"), {
   
   # Compute on screen deaths per minute for each movie. 
   Deaths_Per_Minute <- Body_Count / Length_Minutes
@@ -42,12 +42,12 @@ body.count.data <- within(read.csv('http://files.figshare.com/1332945/film_death
   
   # Combine film title and release date into a new factor column with levels
   # ordered by ascending violence
-  Full_Title <- paste0(Film, ' (', Year, ')')
+  Full_Title <- paste0(Film, " (", Year, ")")
   Full_Title <- ordered(Full_Title, levels = rev(unique(Full_Title[ord])))   # some films are duplicated! Bad Randy!
   
   # Combine number of on screen death per minute and duration of the movies into
   # a new character string column
-  Deaths_Per_Minute_With_Length <- paste(round(Deaths_Per_Minute, digits=2), ' (', Length_Minutes, ' mins)', sep='')
+  Deaths_Per_Minute_With_Length <- paste0(round(Deaths_Per_Minute, digits=2), " (", Length_Minutes, " mins)")
   
 })
 
@@ -67,7 +67,7 @@ print(graph)
 my.bloody.theme <- within(trellis.par.get(), {    # Initialize theme with default value
   axis.line$col <- NA                             # Remove axes 
   plot.polygon <- within(plot.polygon, {
-    col <- '#8A0606'                              # Set bar colors to a nice bloody red
+    col <- "#8A0606"                              # Set bar colors to a nice bloody red
     border <- NA                                  # Remove bars' outline
   })
   axis.text$cex <- 1                              # Default axis text size is a bit small. Make it bigger
@@ -81,7 +81,7 @@ my.bloody.theme <- within(trellis.par.get(), {    # Initialize theme with defaul
 # Update figure with new theme + other improvements (like a title for instance)
 graph <- update(
   graph, 
-  main='25 most violence packed films by deaths per minute',    # Title of the barchart
+  main="25 most violence packed films by deaths per minute",    # Title of the barchart
   par.settings = my.bloody.theme,                               # Use custom theme
   xlab = NULL,                                                  # Remove label of x axis
   scales=list(x=list(at=NULL)),                                 # Remove rest of x axis
@@ -105,12 +105,13 @@ print(graph)
 library(jpeg)  # To read JPG images
 library(grid)  # Graphics library with better image plotting capabilities
 
-# Download a pretty background image
-download.file(url = 'http://www.theswarmlab.com/wp-content/uploads/2014/01/bloody_gun.jpg', 
-              destfile = 'bloody_gun.jpg', quiet = TRUE);
+# Download a pretty background image; mode is set to "wb" because it seems that
+# Windows needs it. I don't use Windows, I can't confirm
+download.file(url = "http://www.theswarmlab.com/wp-content/uploads/2014/01/bloody_gun.jpg", 
+              destfile = "bloody_gun.jpg", quiet = TRUE, mode = "wb")
 
 # Load gun image using "readJPEG" from the "jpeg" package
-img <- readJPEG('bloody_gun.jpg')
+img <- readJPEG("bloody_gun.jpg")
 
 # Add image to graph using "grid.raster" from the "grid" package
 graph <- graph + layer_(
@@ -119,7 +120,7 @@ graph <- graph + layer_(
     x = 1,                          # x location of image "Normalised Parent Coordinates"
     y = 0,                          # y location of image "Normalised Parent Coordinates"
     height = 0.7,                   # Height of the image. 1 indicates that the image height is equal to the graph height
-    just = c('right', 'bottom')))   # Justification of the image relative to its x and y locations
+    just = c("right", "bottom")))   # Justification of the image relative to its x and y locations
 
 # Print graph
 print(graph)
