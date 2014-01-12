@@ -88,7 +88,7 @@ for film_page in list_of_films:
                 found_title = True
                 
             # The kill counts are usually on a line with "Film:"
-            if "Film:" in line:
+            if "film:" in line.lower() or "kills:" in line.lower() or "count:" in line.lower():
                 kills = re.sub("[^0-9]", "", line.split(":")[1].split("(")[0])
 
             # The year is usually on a line with "charts-year"
