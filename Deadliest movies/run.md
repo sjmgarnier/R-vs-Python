@@ -2,6 +2,7 @@
 
 
 
+
 **Document title:** R vs Python - Round 1
 
 **Date:** January 5, 2014
@@ -89,7 +90,7 @@ address:
 [http://dx.doi.org/10.6084/m9.figshare.889719](http://dx.doi.org/10.6084/m9.figshare.889719).
 
 
-g
+
 ```r
 # Load data into a data frame
 body.count.data <- read.csv("http://files.figshare.com/1332945/film_death_counts.csv")

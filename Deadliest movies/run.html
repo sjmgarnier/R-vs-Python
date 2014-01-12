@@ -85,8 +85,7 @@ body.count.data &lt;-<span class="st"> </span><span class="kw">within</span>(bod
   ord &lt;-<span class="st"> </span><span class="kw">order</span>(Deaths_Per_Minute, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)
   Full_Title &lt;-<span class="st"> </span><span class="kw">ordered</span>(Full_Title, <span class="dt">levels =</span> <span class="kw">rev</span>(<span class="kw">unique</span>(Full_Title[ord])))  <span class="co"># some films are duplicated! Bad Randy!</span>
 })</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># generate the full titles for the movies: movie name (year)</span>
-<span class="co"># Generate the full titles for the movies: movie name (year)</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Generate the full titles for the movies: movie name (year)</span>
 full_title = []
 
 <span class="kw">for</span> film, year in <span class="dt">zip</span>(body_count_data[<span class="st">&quot;Film&quot;</span>].values, body_count_data[<span class="st">&quot;Year&quot;</span>].values):
@@ -156,8 +155,6 @@ ax.spines[<span class="st">&quot;top&quot;</span>].set_visible(<span class="ot">
 ax.spines[<span class="st">&quot;right&quot;</span>].set_visible(<span class="ot">False</span>)
 ax.spines[<span class="st">&quot;left&quot;</span>].set_visible(<span class="ot">False</span>)
 ax.spines[<span class="st">&quot;bottom&quot;</span>].set_visible(<span class="ot">False</span>)
-
-<span class="co"># Only show</span>
 
 <span class="co"># Color the y-axis ticks the same dark red color, and the x-axis ticks white</span>
 ax.tick_params(axis=<span class="st">&quot;y&quot;</span>, color=<span class="st">&quot;#8A0707&quot;</span>)

@@ -43,7 +43,7 @@ body.count.data <- within(read.csv("http://files.figshare.com/1332945/film_death
   # Combine film title and release date into a new factor column with levels
   # ordered by ascending violence
   Full_Title <- paste0(Film, " (", Year, ")")
-  Full_Title <- ordered(Full_Title, levels = rev(unique(Full_Title[ord])))   # some films are duplicated! Bad Randy!
+  Full_Title <- ordered(Full_Title, levels = rev(unique(Full_Title[ord])))
   
   # Combine number of on screen death per minute and duration of the movies into
   # a new character string column
@@ -81,12 +81,12 @@ my.bloody.theme <- within(trellis.par.get(), {    # Initialize theme with defaul
 # Update figure with new theme + other improvements (like a title for instance)
 graph <- update(
   graph, 
-  main="25 most violence packed films by deaths per minute",    # Title of the barchart
+  main  ="25 most violence packed films by deaths per minute",  # Title of the barchart
   par.settings = my.bloody.theme,                               # Use custom theme
   xlab = NULL,                                                  # Remove label of x axis
-  scales=list(x=list(at=NULL)),                                 # Remove rest of x axis
+  scales = list(x = list(at = NULL)),                           # Remove rest of x axis
   xlim = c(0, 6.7),                                             # Set graph limits along x axis to accomodate the additional text (requires some trial and error)
-  box.width=0.75)                                               # Default bar width is a bit small. Make it bigger)
+  box.width = 0.75)                                               # Default bar width is a bit small. Make it bigger)
 
 print(graph)
 

@@ -75,7 +75,7 @@
 #' post on the ["Top 25 most violence packed films" in the history of the movie
 #' industry](www.randalolson.com/2013/12/31/most-violence-packed-films/). For
 #' his post, Randy generated a simple horizontal barchart showing the top 25
-#' more violent films ordered by number of on screen deaths per minute. In the
+#' most violent films ordered by number of on screen deaths per minute. In the
 #' rest of this document, we will show you how to reproduce this graph using
 #' Python and how to achieve a similar result with R. We will detail the
 #' different steps of the process and provide for each step the corresponding
@@ -87,7 +87,7 @@
 
 #' ##### 2 - Step by step process #####
 #' 
-#' First thing first, let's set up our working environment by loading some
+#' First things first, let's set up our working environment by loading some
 #' necessary libraries.
 #' 
 
@@ -165,11 +165,10 @@ body_count_data = body_count_data.sort("Deaths_Per_Minute", ascending=True)
 body.count.data <- within(body.count.data, {
   Full_Title <- paste0(Film, " (", Year, ")")
   ord <- order(Deaths_Per_Minute, decreasing = TRUE)
-  Full_Title <- ordered(Full_Title, levels = rev(unique(Full_Title[ord])))  # some films are duplicated! Bad Randy!
+  Full_Title <- ordered(Full_Title, levels = rev(unique(Full_Title[ord])))
 })
 
 #+ filmTitlePy, eval=FALSE, engine="python"
-# generate the full titles for the movies: movie name (year)
 # Generate the full titles for the movies: movie name (year)
 full_title = []
 
@@ -229,12 +228,12 @@ my.bloody.theme <- within(trellis.par.get(), {    # Initialize theme with defaul
 # Update figure with new theme + other improvements (like a title for instance)
 graph <- update(
   graph, 
-  main='25 most violence packed films by deaths per minute',    # Title of the barchart
+  main = '25 most violence packed films by deaths per minute',  # Title of the barchart
   par.settings = my.bloody.theme,                               # Use custom theme
   xlab = NULL,                                                  # Remove label of x axis
-  scales=list(x=list(at=NULL)),                                 # Remove rest of x axis
+  scales = list(x = list(at = NULL)),                           # Remove rest of x axis
   xlim = c(0, 6.7),                                             # Set graph limits along x axis to accomodate the additional text (requires some trial and error)
-  box.width=0.75)                                               # Default bar width is a bit small. Make it bigger)
+  box.width = 0.75)                                             # Default bar width is a bit small. Make it bigger)
 
 print(graph)
 
@@ -250,8 +249,6 @@ ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["bottom"].set_visible(False)
-
-# Only show
 
 # Color the y-axis ticks the same dark red color, and the x-axis ticks white
 ax.tick_params(axis="y", color="#8A0707")
@@ -269,7 +266,7 @@ ax.xaxis.grid(color="white", linestyle="-")
 #+ rightLabelsR, fig.width=10, fig.height=8, fig.align="center", dev="png"
 # Combine number of on screen death per minute and duration of the movies into a new character string column
 body.count.data <- within(body.count.data, {
-  Deaths_Per_Minute_With_Length = paste0(round(body.count.data$Deaths_Per_Minute, digits=2), " (", body.count.data$Length_Minutes, " mins)")
+  Deaths_Per_Minute_With_Length <- paste0(round(body.count.data$Deaths_Per_Minute, digits = 2), " (", body.count.data$Length_Minutes, " mins)")
 })
 
 # Add number of on screen deaths per minute and duration of movies at the end of each bar 
