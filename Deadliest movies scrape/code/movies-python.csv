@@ -1,4 +1,4 @@
-Film,Year,Kill_Count,IMDB_url
+Film,Year,Body_Count,IMDB_url
 24 Hour Party People,2002,7,http://www.imdb.com/title/tt0274309/
 3:10 To Yuma,2007,45,http://www.imdb.com/title/tt0381849/
 300,2007,Film:&nbsp_place_holder;&nbsp_place_holder;,http://www.imdb.com/title/tt0416449/
@@ -302,7 +302,7 @@ Red Scorpion,1989,104,http://www.imdb.com/title/tt0098180/
 Reign of Fire,2002,human-29,&nbsp_place_holder;,http://www.imdb.com/title/tt0253556/
 The Replacement Killers,1998,38,http://www.imdb.com/title/tt0120008/
 Reservoir Dogs,1992,12,http://www.imdb.com/title/tt0105236/
-="",2004,7),http://www.imdb.com/title/tt0318627/
+,2004,7),http://www.imdb.com/title/tt0318627/
 Resident Evil:,2007,dogs),http://www.imdb.com/title/tt0432021/
 Riders,2002,6,http://imdb.com/title/tt0282552/
 Ripley's Game,2002,,http://www.imdb.com/title/tt0265651/
