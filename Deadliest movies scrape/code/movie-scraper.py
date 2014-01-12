@@ -23,8 +23,9 @@ You should have received a copy of the GNU General Public License along with thi
 If not, see http://www.gnu.org/licenses/.
 """
 
+# String parsing libraries
 import string
-import time
+import re
 
 # urllib2 reads web pages if you provide it an URL
 import urllib2
@@ -83,12 +84,12 @@ for film_page in list_of_films:
         
             # If we haven't found the title yet, these markers tell us we've found the movie title
             if not found_title and "!" not in line and "(" not in line and "[" not in line and line.strip() != "":
-                film = line
+                film = line.replace(",", "").strip(":")
                 found_title = True
                 
             # The kill counts are usually on a line with "Film:"
             if "Film:" in line:
-                kills = line.split()[-1]
+                kills = re.sub("[^0-9]", "", line.split(":")[1].split("(")[0])
 
             # The year is usually on a line with "charts-year"
             if "charts-year" in line:
@@ -96,7 +97,7 @@ for film_page in list_of_films:
             
             # The IMDB url is on a line with "[imdb]"
             if "[imdb]" in line.lower():
-                IMDB_url = line.split("(")[-1].split(")")[0]
+                IMDB_url = line.lower().split("[imdb](")[1].split(")")[0]
                 
         out_file.write(film + "," + year + "," + kills + "," + IMDB_url + "\n")
             
@@ -104,8 +105,5 @@ for film_page in list_of_films:
     except Exception as e:
         print film_page
         print e
-		
-    # Be kind and wait a little bit between each request
-	time.sleep(0.1)
         
 out_file.close()
