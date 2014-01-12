@@ -41,10 +41,9 @@ urls.by.letter <- paste0('http://www.moviebodycounts.com/movies-',
                          c("numbers", LETTERS[1:21], "v", "W" , "x", "Y", "Z"), '.htm')
 
 # First, create the list of movie URLs
-urls.by.movie <- vector()
-for (i in 1:length(urls.by.letter)) {
+urls.by.movie <- unlist(lapply(urls.by.letter, FUN = function(URL) {
   # Load raw HTML
-  raw.html <- getURL(urls.by.letter[i], curl = curl)
+  raw.html <- getURL(URL, curl = curl)
   
   # Parse HTML content
   parsed.html <- htmlParse(raw.html)
@@ -52,65 +51,59 @@ for (i in 1:length(urls.by.letter)) {
   # Extract desired links from HTML content. The desired links are those after
   # image 'graphic-movies.jpg' in the page
   links <- as.vector(xpathSApply(parsed.html, "//img[@src='graphic-movies.jpg']/following::a/@href"))
-  urls.by.movie <- c(urls.by.movie, links)
-}
+  
+  if (!is.null(links)) {
+    ix = grepl("http://www.moviebodycounts.com/", links)
+    links[!ix] <- paste0("http://www.moviebodycounts.com/", links[!ix])
+    return(links)
+  }
+}), use.names = FALSE)
 
-# Of course some URLs are not formatted like the others, let's remove the extra
-# characters
-urls.by.movie <- gsub('http://www.moviebodycounts.com/', '', urls.by.movie)
-
-# And one URL is actually a shortcut to another page. Let's get rid of it.
-id <- which(urls.by.movie == "movies-C.htm")
-urls.by.movie <- urls.by.movie[-id]
-
-# And now let's make the URLs complete
-urls.by.movie <- paste0('http://www.moviebodycounts.com/', urls.by.movie)
+# One URL is actually a shortcut to another page. Let's get rid of it.
+ix <- which(grepl("movies-C.htm", urls.by.movie))
+urls.by.movie <- urls.by.movie[-ix]
 
 # Ok, let's get serious now
 
-# Prepare data frame
-data <- data.frame(MBC_URL = urls.by.movie, IMDB_URL = NA, Film = NA, Year = NA, Body_Count = NA)
-
-# Let's do the hard work now
-for (i in 1:length(data$MBC_URL)) {
+data <- do.call(rbind, lapply(urls.by.movie, FUN = function(URL) {
   # Load raw HTML
-  raw.html <- getURL(data$MBC_URL[i], curl = curl)
+  raw.html <- getURL(URL, curl = curl)
   
   # Parse HTML content
   parsed.html <- htmlParse(raw.html)
   
   # Find movie title
-  title <- xpathSApply(parsed.html, "//title", xmlValue)
-  data$Film[i] <- gsub("Movie Body Counts: ", "", title)
+  Film <- xpathSApply(parsed.html, "//title", xmlValue)
+  Film <- gsub("Movie Body Counts: ", "", Film)
   
   # Find movie year
-  data$Year[i] <- as.numeric(xpathSApply(parsed.html, "//a[contains(@href, 'charts-year')]/descendant::text()", xmlValue))
+  Year <- as.numeric(xpathSApply(parsed.html, "//a[contains(@href, 'charts-year')]/descendant::text()", xmlValue))
   
   # Find IMDB link (will be useful for next challenge)
-  data$IMDB_URL[i] <- as.vector(xpathSApply(parsed.html, "//a/@href[contains(.,'imdb')]"))[1]
+  IMDB_URL <- as.vector(xpathSApply(parsed.html, "//a/@href[contains(.,'imdb')]"))[1]
   
   # Extract all text nodes after image 'graphic-bc.jpg'
-  text <- xpathSApply(parsed.html, "//img[@src='graphic-bc.jpg']/following::text()", xmlValue)
+  Body_Count <- xpathSApply(parsed.html, "//img[@src='graphic-bc.jpg']/following::text()", xmlValue)
   
   # Remove all letters, keep numbers only
-  text <- gsub('[^0-9]+', ' ', text)
+  Body_Count <- gsub('[^0-9]+', ' ', Body_Count)
   
   # Select first non-empty element of vector. This is were the number of deaths
   # lies.
-  deaths <- text[which(text != ' ')[1]]
+  Body_Count <- Body_Count[which(Body_Count != ' ')[1]]
   
   # Split the character string at spaces
-  deaths <- unlist(strsplit(deaths, ' '))
+  Body_Count <- unlist(strsplit(Body_Count, ' '))
   
   # Transform characters into numbers
-  deaths <- as.numeric(deaths)
+  Body_Count <- as.numeric(Body_Count)
   
   # Sum up the numbers (in case they have been split into separate categories,
   # which happened for some movies) and save
-  data$Body_Count[i] <- sum(deaths, na.rm = TRUE)
-  
-  print(paste('Film', i, 'of', length(data$MBC_URL), 'done.'))
-}
+  Body_Count <- sum(Body_Count, na.rm = TRUE)
+    
+  return(data.frame(IMDB_URL, Film, Year, Body_Count))
+}))
 
 # Save scraped data in a .csv file for future use
 write.csv(data, "movies-R.csv", row.names = FALSE)
