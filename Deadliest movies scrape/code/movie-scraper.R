@@ -29,8 +29,9 @@
 #' 
 
 # Load libraries
-library(RCurl)     # Everything necessary to grab webpage
-library(XML)       # Everything necessary to parse HTML code
+library(RCurl)      # Everything necessary to grab webpage
+library(XML)        # Everything necessary to parse HTML code
+library(pbapply)    # Progress bars!!!
 
 # Create curl handle for reuse
 curl <- getCurlHandle(useragent = "R", followlocation = TRUE)
@@ -41,7 +42,7 @@ urls.by.letter <- paste0('http://www.moviebodycounts.com/movies-',
                          c("numbers", LETTERS[1:21], "v", "W" , "x", "Y", "Z"), '.htm')
 
 # First, create the list of movie URLs
-urls.by.movie <- unlist(lapply(urls.by.letter, FUN = function(URL) {
+urls.by.movie <- unlist(pblapply(urls.by.letter, FUN = function(URL) {
   # Load raw HTML
   raw.html <- getURL(URL, curl = curl)
   
@@ -65,7 +66,7 @@ urls.by.movie <- urls.by.movie[-ix]
 
 # Ok, let's get serious now
 
-data <- do.call(rbind, lapply(urls.by.movie, FUN = function(URL) {
+data <- do.call(rbind, pblapply(urls.by.movie, FUN = function(URL) {
   # Load raw HTML
   raw.html <- getURL(URL, curl = curl)
   
