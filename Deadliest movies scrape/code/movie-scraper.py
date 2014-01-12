@@ -7,7 +7,8 @@ installed: urllib2 and html2text.
 
 Due to inconsistent formatting of the HTML on www.MovieBodyCounts.com, the script will
 not scrape everything perfectly. As such, the resulting output file *will* require some
-cleanup afterwards.
+cleanup afterwards. The manual cleanup will take less time than finding an elegant
+solution to perfectly scrape the page.
 
 
 This script is free software: you can redistribute it and/or modify it under the
