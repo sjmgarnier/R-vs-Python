@@ -38,9 +38,9 @@ curl <- getCurlHandle(useragent = "R", followlocation = TRUE)
 # Prepare URLs of the HTML files containing the list of movies by letters (first
 # page are movies starting with a number)
 urls.by.letter <- paste0('http://www.moviebodycounts.com/movies-', 
-                         c("numbers", LETTERS), '.htm')
+                         c("numbers", LETTERS[1:21], "v", "W" , "x", "Y", "Z"), '.htm')
 
-# Grab URL for each movie
+# First, create the list of movie URLs
 urls.by.movie <- vector()
 for (i in 1:length(urls.by.letter)) {
   # Load raw HTML
@@ -69,18 +69,28 @@ urls.by.movie <- paste0('http://www.moviebodycounts.com/', urls.by.movie)
 # Ok, let's get serious now
 
 # Prepare data frame
-data <- data.frame(URL = urls.by.movie, Film = NA, Year = NA, Body_Count = NA, MPAA_Rating = NA, Genre = NA, Director = NA, Length_Minutes = NA, IMDB_rating = NA)
+data <- data.frame(MBC_URL = urls.by.movie, IMDB_URL = NA, Film = NA, Year = NA, Body_Count = NA)
 
 # Let's do the hard work now
-for (i in 1:length(data$URL)) {
+for (i in 1:length(data$MBC_URL)) {
   # Load raw HTML
-  raw.html <- getURL(data$URL[i], curl = curl)
+  raw.html <- getURL(data$MBC_URL[i], curl = curl)
   
   # Parse HTML content
   parsed.html <- htmlParse(raw.html)
   
+  # Find movie title
+  title <- xpathSApply(parsed.html, "//title", xmlValue)
+  data$Film[i] <- gsub("Movie Body Counts: ", "", title)
+  
+  # Find movie year
+  data$Year[i] <- as.numeric(xpathSApply(parsed.html, "//a[contains(@href, 'charts-year')]/descendant::text()", xmlValue))
+  
+  # Find IMDB link (will be useful for next challenge)
+  data$IMDB_URL[i] <- as.vector(xpathSApply(parsed.html, "//a/@href[contains(.,'imdb')]"))[1]
+  
   # Extract all text nodes after image 'graphic-bc.jpg'
-  text <- xpathSApply(parsed.html, "//img[@src='graphic-bc.jpg']/descendant::text() | //img[@src='graphic-bc.jpg']/following::text()", xmlValue)
+  text <- xpathSApply(parsed.html, "//img[@src='graphic-bc.jpg']/following::text()", xmlValue)
   
   # Remove all letters, keep numbers only
   text <- gsub('[^0-9]+', ' ', text)
@@ -99,49 +109,11 @@ for (i in 1:length(data$URL)) {
   # which happened for some movies) and save
   data$Body_Count[i] <- sum(deaths, na.rm = TRUE)
   
-  # Now let's find this IMDB link to fill out the rest of the data frame
-  imdb.url <- as.vector(xpathSApply(parsed.html, "//a/@href[contains(.,'imdb')]"))[1]
-  
-  # Download IMDB page of movie
-  imdb.html <- getURL(imdb.url, curl = curl)
-  
-  # Parse HTML of IMDB page
-  imdb.parsed.html <- htmlParse(imdb.html)
-  
-  # Find title
-  data$Film[i] <- xpathSApply(imdb.parsed.html, "//h1[@class='header']/span[@class='itemprop']", xmlValue)
-  
-  # Find year
-  data$Year[i] <- as.numeric(gsub("[^0-9]", "", xpathSApply(imdb.parsed.html, "//h1[@class='header']/span[@class='nobr']", xmlValue)))
-  
-  # Find MPAA rating
-  tmp <- xpathSApply(imdb.parsed.html, "//div[@class='infobar']/span/@content")
-  if (!is.character(tmp)) {   # Some movies don't have a MPAA rating
-    tmp <- "UNRATED"
-  } 
-  data$MPAA_Rating[i] <- tmp
-  
-  # Find genre
-  data$Genre[i] <- paste(xpathSApply(imdb.parsed.html, "//span[@class='itemprop' and @itemprop='genre']", xmlValue), collapse='|')
-  
-  # Find director
-  data$Director[i] <- paste(xpathSApply(imdb.parsed.html, "//div[@itemprop='director']/a", xmlValue), collapse='|')
-  
-  # Find length of movie in minutes
-  data$Length_Minutes[i] <- as.numeric(gsub("[^0-9]", "", xpathSApply(imdb.parsed.html, "//div[@class='infobar']/time[@itemprop='duration']", xmlValue)))
-  
-  # Find IMDB rating
-  data$IMDB_rating[i] <- as.numeric(xpathSApply(imdb.parsed.html, "//div[@class='titlePageSprite star-box-giga-star']", xmlValue))
-  
-  print(paste('Film', i, 'of', length(data$URL), 'done.'))
+  print(paste('Film', i, 'of', length(data$MBC_URL), 'done.'))
 }
 
 # Save scraped data in a .csv file for future use
-write.csv(data, "dataR.csv")
-
-
-
-
+write.csv(data, "movies-R.csv", row.names = FALSE)
 
 
 
