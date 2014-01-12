@@ -33,15 +33,21 @@ library(RCurl)      # Everything necessary to grab webpage
 library(XML)        # Everything necessary to parse HTML code
 library(pbapply)    # Progress bars!!!
 
-# Create curl handle for reuse
+# Create curl handle which can be used for multiple HHTP requests. 
+# followlocation = TRUE in case one of the URLs we want to grab is a redirection
+# link.
 curl <- getCurlHandle(useragent = "R", followlocation = TRUE)
 
-# Prepare URLs of the HTML files containing the list of movies by letters (first
-# page are movies starting with a number)
-urls.by.letter <- paste0('http://www.moviebodycounts.com/movies-', 
-                         c("numbers", LETTERS[1:21], "v", "W" , "x", "Y", "Z"), '.htm')
+# Prepare URLs of the movie lists alphabetically ordered by first letter of
+# movie title (capital A to Z, except for v and y) + "numbers" list (for movies
+# which title starts with a number)
+urls.by.letter <- paste0("http://www.moviebodycounts.com/movies-", 
+                         c("numbers", LETTERS[1:21], "v", "W" , "x", "Y", "Z"), ".htm")
 
-# First, create the list of movie URLs
+# For each movie list... For loops are frowned upon in R, let's use the classier
+# apply functions instead. Here I use the pblapply from the pbapply package.
+# It's equivalent to the regular lapply function, but it provides a neat 
+# progress bar. Unlist to get a vector. 
 urls.by.movie <- unlist(pblapply(urls.by.letter, FUN = function(URL) {
   # Load raw HTML
   raw.html <- getURL(URL, curl = curl)
@@ -74,33 +80,53 @@ data <- do.call(rbind, pblapply(urls.by.movie, FUN = function(URL) {
   parsed.html <- htmlParse(raw.html)
   
   # Find movie title
+  # Title appears inside a XML/HTML node called "title" ("//title"). In this
+  # node, it comes after "Movie Body Counts: ". I use gsub to get rid off "Movie
+  # Body Counts: " and keep only the movie title.
   Film <- xpathSApply(parsed.html, "//title", xmlValue)
   Film <- gsub("Movie Body Counts: ", "", Film)
   
   # Find movie year
+  # The year is usually a text inside ("/descendant::text()") a link node
+  # ("//a") which source contains the string "charts-year" ("[contains(@href,
+  # 'charts-year')]").
   Year <- as.numeric(xpathSApply(parsed.html, "//a[contains(@href, 'charts-year')]/descendant::text()", xmlValue))
   
-  # Find IMDB link (will be useful for next challenge)
+  # Find IMDB link
+  # The IMDB link is inside a link node ("//a") which source contains "imdb"
+  # ("/@href[contains(.,'imdb')]")
   IMDB_URL <- as.vector(xpathSApply(parsed.html, "//a/@href[contains(.,'imdb')]"))[1]
   
-  # Extract all text nodes after image 'graphic-bc.jpg'
-  Body_Count <- xpathSApply(parsed.html, "//img[@src='graphic-bc.jpg']/following::text()", xmlValue)
+  # Note: We select the first element of the vector because for at least one of
+  # the movies, this command returns two links.
   
-  # Remove all letters, keep numbers only
-  Body_Count <- gsub('[^0-9]+', ' ', Body_Count)
+  # Find kill count.
+  # Kill count is contained in the first non-empty text node
+  # ("/following::text()[normalize-space()]") after the image which source file
+  # is called "graphic-bc.jpg" ("//img[@src='graphic-bc.jpg']")
+  Body_Count <- xpathSApply(parsed.html, "//img[@src='graphic-bc.jpg']/following::text()[normalize-space()]", xmlValue)[1]
   
-  # Select first non-empty element of vector. This is were the number of deaths
-  # lies.
-  Body_Count <- Body_Count[which(Body_Count != ' ')[1]]
+  # Now we need to clean up the text node that we just extracted because there
+  # are lots of inconsistencies in the way the kill counts are displayed across
+  # all movie pages. For instance, counts are sometimes accompanied by text, not
+  # always the same, and sometimes there is no text at all. Sometimes the total
+  # count is split in two numbers (e.g., number of dead humans and number of
+  # dead aliens). And sometimes the total count is displayed and accompanied by
+  # a split count in parenthesis. First, let's remove everything that is
+  # writtent in parenthesis or that is not a number.
+  # Using gsub, remove everything in parenthesis and all non number characters
+  Body_Count <- gsub("\\(.*?\\)", " ", Body_Count)
+  Body_Count <- gsub("[^0-9]+", " ", Body_Count)
   
-  # Split the character string at spaces
-  Body_Count <- unlist(strsplit(Body_Count, ' '))
+  # In case the total count has been split, we want to separate these numbers
+  # from each other so that we can add them up later. Using strsplit, split the
+  # character string at spaces
+  Body_Count <- unlist(strsplit(Body_Count, " "))
   
-  # Transform characters into numbers
+  # For now, we have extracted characters. Transform them into numbers.
   Body_Count <- as.numeric(Body_Count)
   
-  # Sum up the numbers (in case they have been split into separate categories,
-  # which happened for some movies) and save
+  # Sum up the numbers (in case they have been split into separate categories.
   Body_Count <- sum(Body_Count, na.rm = TRUE)
     
   return(data.frame(IMDB_URL, Film, Year, Body_Count))

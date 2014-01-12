@@ -1,7 +1,7 @@
 "IMDB_URL","Film","Year","Body_Count"
 "http://www.imdb.com/title/tt0274309/","24 Hour Party People",2002,7
 "http://www.imdb.com/title/tt0381849/","3:10 To Yuma",2007,45
-"http://www.imdb.com/title/tt0416449/","300",2007,600
+"http://www.imdb.com/title/tt0416449/","300",2007,0
 "http://www.imdb.com/title/tt0134273/","8MM",1999,7
 "http://www.imdb.com/title/tt0066740/","The Abominable Dr. Phibes",1971,10
 "http://www.imdb.com/title/tt0094602/","Above the Law",1988,18
@@ -10,8 +10,8 @@
 "http://us.imdb.com/title/tt0402022/","Aeon Flux",2005,58
 "http://www.imdb.com/title/tt0094625/","Akira",1988,119
 "http://www.imdb.com/title/tt0284837/","Ali G Indahouse",2002,11
-"http://www.imdb.com/title/tt0078748/","Alien",1979,18
-"http://www.imdb.com/title/tt0758730/","Aliens vs. Predator: Requiem",2007,230
+"http://www.imdb.com/title/tt0078748/","Alien",1979,9
+"http://www.imdb.com/title/tt0758730/","Aliens vs. Predator: Requiem",2007,115
 "http://imdb.com/title/tt0426883/","Alpha Dog",2007,3
 "http://www.imdb.com/title/tt0080360/","Altered States",1980,5
 "http://www.imdb.com/title/tt0765429/","American Gangster",2007,15
@@ -63,7 +63,7 @@
 "http://www.imdb.com/title/tt0245803/","Bulletproof Monk",2003,37
 "http://www.imdb.com/title/tt0303816/","Cabin Fever",2002,19
 "http://www.imdb.com/title/tt0112641/","Casino",1995,25
-"http://www.imdb.com/title/tt0381061","Casino Royale",2006,54
+"http://www.imdb.com/title/tt0381061","Casino Royale",2006,0
 "http://www.imdb.com/title/tt0472062/","Charlie Wilson's War",2007,22
 "http://imdb.com/title/tt0305357/","Charlie's Angels: Full Throttle",2003,39
 "http://www.imdb.com/title/tt0206634/","Children of Men",2006,77
@@ -76,7 +76,7 @@
 "http://www.imdb.com/title/tt0099277/","Class of 1999",1990,43
 "http://www.imdb.com/title/tt0109444/","Clear & Present Danger",1994,41
 "http://www.imdb.com/title/tt0066921/","A Clockwork Orange",1971,7
-"http://www.imdb.com/title/tt1060277/","Cloverfield",2008,54
+"http://www.imdb.com/title/tt1060277/","Cloverfield",2008,27
 "http://www.imdb.com/title/tt0369339/","Collateral",2004,17
 "http://www.imdb.com/title/tt0290538/","Confessions of a Dangerous Mind",2002,50
 "http://www.imdb.com/title/tt0088944/","Commando",1985,88
@@ -88,7 +88,7 @@
 "http://www.imdb.com/title/tt0142192/","The Corruptor",1999,37
 "http://www.imdb.com/title/tt0245844/","The Count of Monte Cristo",2002,5
 "http://imdb.com/title/tt0306685/","Cradle 2 The Grave",2003,13
-"http://www.imdb.com/title/tt0479884/","Crank",2006,57
+"http://www.imdb.com/title/tt0479884/","Crank",2006,29
 "http://www.imdb.com/title/tt0083767/","Creepshow",1982,15
 "http://www.imdb.com/title/tt0310924/","Crime Spree",2003,20
 "http://www.imdb.com/title/tt0190332/","Crouching Tiger, Hidden Dragon",2000,14
@@ -132,7 +132,7 @@
 "http://amazon.imdb.com/title/tt0119116/","Fifth Element",1997,80
 "http://www.imdb.com/title/tt0137523/","Fight Club",1999,14
 "http://www.imdb.com/title/tt0408345/","Firewall",2006,5
-"http://www.imdb.com/title/tt0058461/","A Fistful of Dollars",1964,120
+"http://www.imdb.com/title/tt0058461/","A Fistful of Dollars",1964,109
 "http://www.imdb.com/title/tt0418689/","Flags of Our Fathers",2006,93
 "http://www.imdb.com/title/tt0097368/","The Fly 2",1989,8
 "http://www.imdb.com/title/tt0080749/","The Fog",1980,6
@@ -182,9 +182,9 @@
 "http://www.imdb.com/title/tt0800080/","The Incredible Hulk",2008,41
 "http://www.imdb.com/title/tt0372784/","The Incredibles",2004,16
 "http://www.imdb.com/title/tt0367882/","Indiana Jones and the Kingdom of the
-Crystal Skull",2008,152
+Crystal Skull",2008,76
 "http://www.imdb.com/title/tt0454848/","Inside Man",2006,13
-"http://www.imdb.com/title/tt0963178/","The International",2009,19
+"http://www.imdb.com/title/tt0963178/","The International",2009,18
 "http://us.imdb.com/title/tt0089348/","Invasion U.S.A.",1985,146
 "http://www.imdb.com/title/tt0371746/","Iron Man",2008,57
 "http://www.imdb.com/title/tt0399201/","The Island",2005,12
@@ -197,12 +197,12 @@ Crystal Skull",2008,152
 "http://www.imdb.com/title/tt0267626/","K-19: The Widowmaker",2002,10
 "http://www.imdb.com/title/tt0065938/","Kelly's Heroes",1970,139
 "http://www.imdb.com/title/tt0320661/","Kingdom of Heaven",2005,610
-"http://www.imdb.com/title/tt0266697/","Kill Bill: Vol. 1",2003,190
+"http://www.imdb.com/title/tt0266697/","Kill Bill: Vol. 1",2003,95
 "http://www.imdb.com/title/tt0378194/","Kill Bill: Vol. 2",2004,3
 "http://www.imdb.com/title/tt0097202/","Movie Body Counts:The Killer",1989,149
 "http://www.imdb.com/title/tt0360717/","King Kong",2005,23
 "http://www.imdb.com/title/tt0099939/","King of New York",1990,38
-"http://www.imdb.com/title/tt0373469/","Kiss Kiss Bang Bang",2005,16
+"http://www.imdb.com/title/tt0373469/","Kiss Kiss Bang Bang",2005,15
 "http://www.imdb.com/title/tt0373074/","Kung Fu Hustle",2004,20
 "http://www.imdb.com/title/tt0335245/","The Ladykillers",2004,5
 "http://www.imdb.com/title/tt0107362/","Last Action Hero",1993,45
@@ -252,10 +252,10 @@ Crystal Skull",2008,152
 "http://www.imdb.com/title/tt0117060/","Mission: Impossible",1996,9
 "http://www.imdb.com/title/tt0120755/","Mission: Impossible II",2000,37
 "http://www.imdb.com/title/tt0317919/","Mission: Impossible III",2006,23
-"http://www.imdb.com/title/tt0884328/","The Mist",2007,92
+"http://www.imdb.com/title/tt0884328/","The Mist",2007,46
 "http://imdb.com/title/tt0113855/","Mortal Kombat",1995,11
 "http://www.imdb.com/title/tt0356910/","Mr. & Mrs. Smith",2005,43
-"http://www.imdb.com/title/tt0780571/","Mr. Brooks",2007,18
+"http://www.imdb.com/title/tt0780571/","Mr. Brooks",2007,9
 "http://www.imdb.com/title/tt0120616/","The Mummy",1999,155
 "http://www.imdb.com/title/tt0408306/","Munich",2005,49
 "http://www.imdb.com/title/tt0246544/","The Musketeer",2001,56
@@ -306,20 +306,20 @@ Black Pearl",2003,42
 "http://www.imdb.com/title/tt0253556/","Reign of Fire",2002,32
 "http://www.imdb.com/title/tt0120008/","The Replacement Killers",1998,38
 "http://www.imdb.com/title/tt0105236/","Reservoir Dogs",1992,12
-"http://www.imdb.com/title/tt0318627/","Resident Evil: Apocalypse",2004,246
-"http://www.imdb.com/title/tt0432021/","Resident Evil: Extinction",2007,248
+"http://www.imdb.com/title/tt0318627/","Resident Evil: Apocalypse",2004,123
+"http://www.imdb.com/title/tt0432021/","Resident Evil: Extinction",2007,124
 "http://imdb.com/title/tt0282552/","Riders",2002,6
 "http://www.imdb.com/title/tt0265651/","Ripley's Game",2002,11
 "http://www.imdb.com/title/tt0339579/","Ritana",2002,91
 "http://www.imdb.com/title/tt0098206/","Road House",1989,7
 "http://us.imdb.com/title/tt0093870/","RoboCop",1987,34
-"http://www.imdb.com/title/tt1032755/","RocknRolla",2008,22
+"http://www.imdb.com/title/tt1032755/","RocknRolla",2008,11
 "http://www.imdb.com/title/tt0117500/","The Rock",1996,24
 "http://us.imdb.com/title/tt0107983/","Romeo is Bleeding",1993,15
 "http://imdb.com/title/tt0122690/","Ronin",1998,34
 "http://www.imdb.com/title/tt0110891/","Prince of Jutland",1994,38
 "http://www.imdb.com/title/tt0327850/","The Rundown",2003,46
-"http://www.imdb.com/title/tt0093894/","The Running Man",1987,78
+"http://www.imdb.com/title/tt0093894/","The Running Man",1987,41
 "http://www.imdb.com/title/tt0404390/","Running Scared",2006,22
 "http://www.imdb.com/title/tt0318649/","Sahara",2005,68
 "http://www.imdb.com/title/tt0120815/","Saving Private Ryan",1998,255
@@ -327,21 +327,21 @@ Black Pearl",2003,42
 "http://www.imdb.com/title/tt0277296/","Scorpion King",2002,105
 "http://www.imdb.com/title/tt0084649/","Secret of NIMH",1982,12
 "http://www.imdb.com/title/tt0363988/","Secret Window",2004,4
-"http://www.imdb.com/title/tt0379786/","Serenity",2005,74
+"http://www.imdb.com/title/tt0379786/","Serenity",2005,0
 "http://www.imdb.com/title/tt0464196/","Severance",2006,28
 "http://www.imdb.com/title/tt0162650/","Shaft 2000",2000,22
 "http://www.imdb.com/title/tt0365748/","Shaun of the Dead",2004,60
 "http://www.imdb.com/title/tt0111161/","The Shawshank Redemption",1994,4
 "http://www.imdb.com/title/tt0465602/","Shoot 'Em Up",2007,151
 "http://www.imdb.com/title/tt0102915/","Showdown In Little Tokyo",1991,48
-"http://www.imdb.com/title/tt0286106/","Signs",2002,6
+"http://www.imdb.com/title/tt0286106/","Signs",2002,3
 "http://www.imdb.com/title/tt0102926","The Silence of the Lambs",1991,8
 "http://www.imdb.com/title/tt0117653/","Silent Trigger",1996,35
 "http://www.imdb.com/title/tt0401792/","Sin City",2005,53
 "http://www.imdb.com/title/tt0162661/","Sleepy Hollow",1999,25
-"http://www.imdb.com/title/tt1010048/","Slumdog Millionaire",2008,10
+"http://www.imdb.com/title/tt1010048/","Slumdog Millionaire",2008,8
 "http://www.imdb.com/title/tt0475394/","Smokin' Aces",2007,47
-"http://www.imdb.com/title/tt0417148/","Snakes on a Plane",2006,120
+"http://www.imdb.com/title/tt0417148/","Snakes on a Plane",2006,60
 "http://www.imdb.com/title/tt0208092/","Snatch",2000,26
 "http://www.imdb.com/title/tt0360009/","Spartan",2004,15
 "http://www.imdb.com/title/tt0111257/","Speed",1994,7
@@ -354,26 +354,26 @@ Black Pearl",2003,42
 "http://www.imdb.com/title/tt0076759/","Star Wars IV",1977,75
 "http://imdb.com/title/tt0080684/","Star Wars V",1980,30
 "http://imdb.com/title/tt0086190/","Star Wars VI",1983,69
-"http://imdb.com/title/tt0120201/","Starship Troopers",1997,512
+"http://imdb.com/title/tt0120201/","Starship Troopers",1997,256
 "http://imdb.com/title/tt0282552/","Riders",2002,6
 "http://www.imdb.com/title/tt0102984/","Stone Cold",1991,45
 "http://us.imdb.com/title/tt0114558/","Strange Days",1995,12
-"http://www.imdb.com/title/tt0489282/","Strange Wilderness",2008,30
+"http://www.imdb.com/title/tt0489282/","Strange Wilderness",2008,15
 "http://www.imdb.com/title/tt0162677/","Summer of Sam",1999,10
-"http://www.imdb.com/title/tt0448134/","Sunshine",2007,30
+"http://www.imdb.com/title/tt0448134/","Sunshine",2007,15
 "http://www.imdb.com/title/tt0108255/","Super Mario Bros.",1993,8
 "http://imdb.com/title/tt0348150/","Superman Returns",2006,10
 "http://www.imdb.com/title/tt0408236/","Sweeney Todd: The Demon Barber of Fleet
 Street",2007,12
 "http://www.imdb.com/title/tt0120851/","Sweepers",1998,74
 "http://www.imdb.com/title/tt0244244/","Swordfish",2001,41
-"http://www.imdb.com/title/tt0365737/","Syriana",2005,22
+"http://www.imdb.com/title/tt0365737/","Syriana",2005,11
 "http://www.imdb.com/title/tt0936501/","Taken",2008,35
 "http://www.imdb.com/title/tt0098439/","Tango & Cash",1989,20
 "http://www.imdb.com/title/tt0075314/","Taxi Driver",1976,4
 "http://www.imdb.com/title/tt0372588/","Team America",2004,79
 "http://www.imdb.com/title/tt0088247/","Terminator",1984,34
-"http://www.imdb.com/title/tt0103064/","Terminator 2: Judgment Day",1991,25
+"http://www.imdb.com/title/tt0103064/","Terminator 2: Judgment Day",1991,23
 "http://www.imdb.com/title/tt0181852/","Terminator 3",2003,14
 "http://www.imdb.com/title/tt0469494/","There Will Be Blood",2007,4
 "http://www.imdb.com/title/tt0084787/","The Thing",1982,21
@@ -409,7 +409,7 @@ Street",2007,12
 "http://www.imdb.com/title/tt0351977/","Walking Tall",2004,6
 "http://www.imdb.com/title/tt0499556/","War",2007,97
 "http://www.imdb.com/title/tt0884224/","War, Inc.",2008,73
-"http://www.imdb.com/title/tt0407304/","War of the Worlds",2005,104
+"http://www.imdb.com/title/tt0407304/","War of the Worlds",2005,52
 "http://www.imdb.com/title/tt0281364/","Wasabi",2001,22
 "http://www.imdb.com/title/tt0202677/","The Way of the Gun",2000,18
 "http://www.imdb.com/title/tt0277434/","We Were Soldiers",2002,305
