@@ -1,21 +1,3 @@
-"""
-Copyright 2014 Randal S. Olson
-
-This file is a script that makes pretty bar charts. It was written to be executed
-in IPython Notebook.
-
-This script is free software: you can redistribute it and/or modify it under the
-terms of the GNU General Public License as published by the Free Software Foundation,
-either version 3 of the License, or (at your option) any later version.
-
-This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with this script.
-If not, see http://www.gnu.org/licenses/.
-"""
-
 # This starts the IPython Notebook pylab module, useful for plotting and interactive scientific computing
 %pylab inline
 from pandas import *
@@ -39,9 +21,7 @@ full_title = []
 for film, year in zip(body_count_data["Film"].values, body_count_data["Year"].values):
     full_title.append(film + " (" + str(year) + ")")
     
-body_count_ y-axis ticks on the left and x-axis ticks on the bottom
-ax.yaxis.tick_left()
-ax.xaxis.tick_bottom()data["Full_Title"] = array(full_title)
+body_count_data["Full_Title"] = array(full_title)
 
 fig = plt.figure(figsize=(8,12))
 
@@ -85,13 +65,15 @@ ax.spines["right"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.spines["bottom"].set_visible(False)
 
-# Only show
+# y-axis ticks on the left and x-axis ticks on the bottom
+ax.yaxis.tick_left()
+ax.xaxis.tick_bottom()
 
 # Color the y-axis ticks the same dark red color, and the x-axis ticks white
 ax.tick_params(axis="y", color="#8A0707")
 ax.tick_params(axis="x", color="white")
 
-
+# Don't show the x axis tick markers
 ax.xaxis.grid(color="white", linestyle="-")
 
 # Save the figure as a PNG
