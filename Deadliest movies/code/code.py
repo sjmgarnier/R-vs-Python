@@ -18,7 +18,7 @@ If not, see http://www.gnu.org/licenses/.
 
 # This starts the IPython Notebook pylab module, useful for plotting and interactive scientific computing
 %pylab inline
-from pandas import *
+from pandas import read_csv
 
 # Read the data into a pandas DataFrame
 body_count_data = read_csv("http://files.figshare.com/1332945/film_death_counts.csv")
