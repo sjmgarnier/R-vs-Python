@@ -33,6 +33,7 @@ with open("film-death-counts-Python.csv", "wb") as out_file:
     out_file.write("Film,Year,Body_Count,MPAA_Rating,Genre,Director,Actors,Length_Minutes,IMDB_Rating\n")
     
     for movie_entry in movie_data.iterrows():
+        # Use a try-catch on the loop to prevent temporary connection-related issues from stopping the scrape
         try:
             movie = imdb_access.get_movie(movie_entry[1]["Movie_Number"])
             movie_fields = []
