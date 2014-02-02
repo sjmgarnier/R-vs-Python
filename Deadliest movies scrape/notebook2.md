@@ -44,8 +44,7 @@ way.
 
 ___
 
-#### Today's challenge: a data thief manual for honest scientists (Part 2 of 
-2) ####
+#### Today's challenge: a data thief manual for honest scientists (Part 2 of 2) ####
 
 ##### 1 - Introduction #####
 
