@@ -15,15 +15,15 @@
 #' this script. If not, see http://www.gnu.org/licenses/.
 #' 
 
-#' **Document title:** R vs Python - Round 2 (Part 2)
+#' **Document title:** R vs Python - Round 2 (2/2)
 #' 
-#' **Date:** January 27, 2014
+#' **Date:** February 2, 2014
 #' 
 #' **Author:** Simon Garnier (http://www.theswarmlab.com / @sjmgarnier)
 #' 
-#' **Description:** This script scrapes data out of 2 websites
-#' (www.MovieBodyCounts.com and www.imdb.com). For more information, see
-#' http://www.theswarmlab.com/r-vs-python-round-2/
+#' **Description:** This script scrapes data out of www.imdb.com. For more
+#' information, see http://www.theswarmlab.com/r-vs-python-round-2/ and
+#' http://www.theswarmlab.com/r-vs-python-round-2-22
 #' 
 #' Document generated with RStudio ([www.rstudio.com](http://www.rstudio.com)).
 #' 
