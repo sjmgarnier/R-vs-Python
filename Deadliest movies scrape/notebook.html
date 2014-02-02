@@ -28,7 +28,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <link rel="stylesheet" href="custom.css" type="text/css" />
 </head>
 <body>
-<p><strong>Document title:</strong> R vs Python - Round 2</p>
+<p><strong>Document title:</strong> R vs Python - Round 2 (1/2)</p>
 <p><strong>Date:</strong> January 12, 2014</p>
 <p><strong>Text by:</strong> Simon Garnier (<a href="http://www.theswarmlab.com">www.theswarmlab.com</a> / <a href="http://twitter.com/sjmgarnier">@sjmgarnier</a>)</p>
 <p><strong>R code by:</strong> Simon Garnier (<a href="http://www.theswarmlab.com">www.theswarmlab.com</a> / <a href="http://twitter.com/sjmgarnier">@sjmgarnier</a>)</p>
@@ -128,7 +128,7 @@ urls.by.movie &lt;-<span class="st"> </span>urls.by.movie[-ix]</code></pre>
       
     <span class="co"># If the movie list page doesn&#39;t exist, keep going</span>
     <span class="kw">except</span>:
-      <span class="kw">print</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">error with &quot;</span> + letter + <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span></code></pre>
+      <span class="dt">print</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">error with &quot;</span> + letter + <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span></code></pre>
 <p>Now that we know where to find each movie, we can start the hard part of this challenge. We will go through each movie webpage and attempt to find its title, release year, count of on-screen deaths and link to its page on <a href="http://www.imdb.com">www.imdb.com</a>. We will save all this information in a .csv file.</p>
 <p>For each movie, we will…</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># For each movie... </span>
@@ -234,8 +234,8 @@ out_file.write(<span class="st">&quot;Film,Year,Kill_Count,IMDB_url</span><span 
 
     <span class="co"># If a movie page fails to open, print out the error and move on to the next movie</span>
     <span class="kw">except</span> <span class="ot">Exception</span> <span class="ch">as</span> e:
-      <span class="kw">print</span> film_page
-    <span class="kw">print</span> e
+      <span class="dt">print</span> film_page
+    <span class="dt">print</span> e
 
 out_file.close()</code></pre>
 <p>And voilà! You should now have a .csv file somewhere on your computer containing all the information we just scraped from the website. Not too hard, right?</p>
