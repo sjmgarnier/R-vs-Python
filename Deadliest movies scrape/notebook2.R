@@ -67,21 +67,27 @@
 
 #' ___
 #' 
-#' #### Today's challenge: a data thief manual for honest scientists (Part 2 of 2) ####
+#' #### Today's challenge: a data thief manual for honest scientists (Part 2 of 
+#' 2) ####
 #' 
 #' ##### 1 - Introduction #####
 #' 
-#' [Last time](http://www.theswarmlab.com/r-vs-python-round-2/) we showed you
-#' how to scrape data from
-#' [www.MovieBodyCounts.com](http://www.moviebodycounts.com). Today, we will
-#' finish what we started by retrieving additional information from
-#' [www.imdb.com](http://www.imdb.com). In particular, we will attempt to
-#' recover the following pieces of information for each of the movies we
+#' [Last time](http://www.theswarmlab.com/r-vs-python-round-2/) we showed you 
+#' how to scrape data from 
+#' [www.MovieBodyCounts.com](http://www.moviebodycounts.com). Today, we will 
+#' finish what we started by retrieving additional information from 
+#' [www.imdb.com](http://www.imdb.com). In particular, we will attempt to 
+#' recover the following pieces of information for each of the movies we 
 #' collected last time: MPAA rating, genre(s), director(s), duration in minutes,
-#' IMDb rating and full cast. We will detail the different steps of the process
-#' and provide for each step the corresponding code (red boxes for R, green
-#' boxes for Python). You will also find the entire codes at the end of this
+#' IMDb rating and full cast. We will detail the different steps of the process 
+#' and provide for each step the corresponding code (red boxes for R, green 
+#' boxes for Python). You will also find the entire codes at the end of this 
 #' document.
+#' 
+#' If you think there’s a better way to code this in either language, leave a 
+#' pull request on our [GitHub
+#' repository](https://github.com/morpionZ/R-vs-Python/tree/master/Deadliest%20movies%20scrape/code)
+#' or leave a note with suggestions in the comments below.
 #' 
 
 

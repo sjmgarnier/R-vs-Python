@@ -38,9 +38,13 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h4 id="foreword">Foreword</h4>
 <p>My friend Randy Olson and I got into the habit to argue about the relative qualities of our favorite languages for data analysis and visualization. I am an enthusiastic R user (<a href="http://www.r-project.org">www.r-project.org</a>) while Randy is a fan of Python (<a href="http://www.python.org">www.python.org</a>). One thing we agree on however is that our discussions are meaningless unless we actually put R and Python to a series of tests to showcase their relative strengths and weaknesses. Essentially we will set a common goal (<em>e.g.</em>, perform a particular type of data analysis or draw a particular type of graph) and create the R and Python codes to achieve this goal. And since Randy and I are all about sharing, open source and open access, we decided to make public the results of our friendly challenges so that you can help us decide between R and Python and, hopefully, also learn something along the way.</p>
 <hr />
-<h4 id="todays-challenge-a-data-thief-manual-for-honest-scientists-part-2-of-2">Today’s challenge: a data thief manual for honest scientists (Part 2 of 2)</h4>
+<h4 id="todays-challenge-a-data-thief-manual-for-honest-scientists-part-2-of">Today’s challenge: a data thief manual for honest scientists (Part 2 of</h4>
+<ol start="2" style="list-style-type: decimal">
+<li>####</li>
+</ol>
 <h5 id="introduction">1 - Introduction</h5>
 <p><a href="http://www.theswarmlab.com/r-vs-python-round-2/">Last time</a> we showed you how to scrape data from <a href="http://www.moviebodycounts.com">www.MovieBodyCounts.com</a>. Today, we will finish what we started by retrieving additional information from <a href="http://www.imdb.com">www.imdb.com</a>. In particular, we will attempt to recover the following pieces of information for each of the movies we collected last time: MPAA rating, genre(s), director(s), duration in minutes, IMDb rating and full cast. We will detail the different steps of the process and provide for each step the corresponding code (red boxes for R, green boxes for Python). You will also find the entire codes at the end of this document.</p>
+<p>If you think there’s a better way to code this in either language, leave a pull request on our <a href="https://github.com/morpionZ/R-vs-Python/tree/master/Deadliest%20movies%20scrape/code">GitHub repository</a> or leave a note with suggestions in the comments below.</p>
 <h5 id="step-by-step-process">2 - Step by step process</h5>
 <p>First things first, let’s set up our working environment by loading some necessary libraries.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load libraries</span>
