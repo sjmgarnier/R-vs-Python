@@ -146,7 +146,8 @@ quandl_data = Quandl.get("TPC/HIST_RECEIPT",
 
 quandl_data.head()
 
-#' The column names from Quandl's data frame contain spaces. We need to correct that before we can proceed with the rest of the analysis. 
+#' The column names from Quandl's data frame contain spaces. We need to correct 
+#' that before we can proceed with the rest of the analysis. 
 #' 
 
 #+ syntaxR, message=FALSE, warning=FALSE
@@ -162,7 +163,10 @@ quandl_data["Individual_Income_Taxes"] = quandl_data["Individual Income Taxes"]
 quandl_data["Corporation_Income_Taxes"] = quandl_data["Corporation Income Taxes"]
 quandl_data["Fiscal_Year"] = range(len(quandl_data.index))
 
-#' The dataset contains three columns of interest for us: individuals' and corporations' income taxes as a fraction of the GDP, and fiscal year. We will first plot the individuals' and corporations' income taxes as a function of the fiscal year to see what the data look like.
+#' The dataset contains three columns of interest for us: individuals' and 
+#' corporations' income taxes as a fraction of the GDP, and fiscal year. We will 
+#' first plot the individuals' and corporations' income taxes as a function of 
+#' the fiscal year to see what the data look like.
 #' 
 
 #+ graphBaseR, message=FALSE, fig.width=10, fig.height=8, fig.align="center", dev="png"
@@ -280,8 +284,9 @@ corporation_regression = sm.OLS.from_formula("Corporation_Income_Taxes ~ Fiscal_
 #' Now let's have a look to the summary statistics of each fitted model. We will
 #' display the R output only to keep things simple. However if you decide to 
 #' look at the Python output, the result of the regression might look a bit 
-#' different because it seems that R and Python handle dates in a different way 
-#' (R treats the dates as days in this case, Python as years). 
+#' different. Randy had to transform the dates into years because the fitting
+#' function did not seem capable of handling dates like the fitting function in
+#' R does (it converts the dates in days in this case).
 #' 
 
 #' First, the model for individuals' income taxes:
@@ -375,7 +380,7 @@ corporation_predict_mean_ci_low, corporation_predict_mean_ci_upper = corporation
 #' the confidence intervals of the predicted values as a polygon.
 #' 
 
-#+ grapPredictR, message=FALSE, fig.width=10, fig.height=8, fig.align="center", dev="png"
+#+ graphPredictR, message=FALSE, fig.width=10, fig.height=8, fig.align="center", dev="png"
 # Add predicted values for model of individual income taxes 
 graph <- graph + xyplot(Predictions$fit ~ Fiscal.Year, 
                         data = predict.ind,

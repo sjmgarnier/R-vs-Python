@@ -129,7 +129,8 @@ quandl_data.head()
 ```
 
 
-The column names from Quandl's data frame contain spaces. We need to correct that before we can proceed with the rest of the analysis. 
+The column names from Quandl's data frame contain spaces. We need to correct 
+that before we can proceed with the rest of the analysis. 
 
 
 
@@ -149,7 +150,10 @@ quandl_data["Fiscal_Year"] = range(len(quandl_data.index))
 ```
 
 
-The dataset contains three columns of interest for us: individuals' and corporations' income taxes as a fraction of the GDP, and fiscal year. We will first plot the individuals' and corporations' income taxes as a function of the fiscal year to see what the data look like.
+The dataset contains three columns of interest for us: individuals' and 
+corporations' income taxes as a fraction of the GDP, and fiscal year. We will 
+first plot the individuals' and corporations' income taxes as a function of 
+the fiscal year to see what the data look like.
 
 
 
@@ -276,8 +280,9 @@ corporation_regression = sm.OLS.from_formula("Corporation_Income_Taxes ~ Fiscal_
 Now let's have a look to the summary statistics of each fitted model. We will
 display the R output only to keep things simple. However if you decide to 
 look at the Python output, the result of the regression might look a bit 
-different because it seems that R and Python handle dates in a different way 
-(R treats the dates as days in this case, Python as years). 
+different. Randy had to transform the dates into years because the fitting
+function did not seem capable of handling dates like the fitting function in
+R does (it converts the dates in days in this case).
 
 First, the model for individuals' income taxes:
 
@@ -458,7 +463,7 @@ graph <- graph + layer_(lpolygon(x = c(predict.corp$Fiscal.Year,
 print(graph)
 ```
 
-<img src="figure/grapPredictR.png" title="plot of chunk grapPredictR" alt="plot of chunk grapPredictR" style="display: block; margin: auto;" />
+<img src="figure/graphPredictR.png" title="plot of chunk graphPredictR" alt="plot of chunk graphPredictR" style="display: block; margin: auto;" />
 
 ```python
 plt.plot(quandl_data["Fiscal_Year"],

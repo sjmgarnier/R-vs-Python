@@ -165,7 +165,7 @@ individual_regression = sm.OLS.from_formula(<span class="st">&quot;Individual_In
 
 <span class="co"># Fit a linear regression to the corporation income taxes time series</span>
 corporation_regression = sm.OLS.from_formula(<span class="st">&quot;Corporation_Income_Taxes ~ Fiscal_Year&quot;</span>, quandl_data).fit()</code></pre>
-<p>Now let’s have a look to the summary statistics of each fitted model. We will display the R output only to keep things simple. However if you decide to look at the Python output, the result of the regression might look a bit different because it seems that R and Python handle dates in a different way (R treats the dates as days in this case, Python as years).</p>
+<p>Now let’s have a look to the summary statistics of each fitted model. We will display the R output only to keep things simple. However if you decide to look at the Python output, the result of the regression might look a bit different. Randy had to transform the dates into years because the fitting function did not seem capable of handling dates like the fitting function in R does (it converts the dates in days in this case).</p>
 <p>First, the model for individuals’ income taxes:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Summary statistics for individual income taxes model</span>
 <span class="kw">summary</span>(model.ind)</code></pre>
@@ -279,7 +279,7 @@ graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class=
 
 <span class="co"># Reprint graph object</span>
 <span class="kw">print</span>(graph)</code></pre>
-<p><img src="figure/grapPredictR.png" title="plot of chunk grapPredictR" alt="plot of chunk grapPredictR" style="display: block; margin: auto;" /></p>
+<p><img src="figure/graphPredictR.png" title="plot of chunk graphPredictR" alt="plot of chunk graphPredictR" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode python"><code class="sourceCode python">plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>],
          individual_fitted_values,
          color=<span class="st">&quot;#00526D&quot;</span>, lw=<span class="dv">2</span>)
