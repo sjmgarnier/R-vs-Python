@@ -95,6 +95,10 @@ require("lattice")        # Base graph functions
 require("latticeExtra")   # Layer graph functions
 ```
 
+```python
+import Quandl
+```
+
 
 Now, let's load the dataset from Quandl. You can find it on Quandl's website 
 [here](http://www.quandl.com/TPC/HIST_RECEIPT-Historical-Source-of-Revenue-as-Share-of-GDP).
@@ -112,8 +116,36 @@ my.data <- Quandl("TPC/HIST_RECEIPT",
                   start_date = "1945-12-31", 
                   end_date = "2013-12-31")
 
+# Display first lines of the data frame
+head(my.data)
+```
+
+```python
+quandl_data = Quandl.get("TPC/HIST_RECEIPT",
+                         trim_start="1945-12-31",
+                         trim_end="2013-12-31")
+
+quandl_data.head()
+```
+
+
+The column names from Quandl's data frame contain spaces. We need to correct that before we can proceed with the rest of the analysis. 
+
+
+
+```r
 # The columns' names contain spaces, make them syntactically valid
 names(my.data) <- make.names(names(my.data))
+```
+
+```python
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+# Rename the columns we're using with underscores -- required for the linear regression
+quandl_data["Individual_Income_Taxes"] = quandl_data["Individual Income Taxes"]
+quandl_data["Corporation_Income_Taxes"] = quandl_data["Corporation Income Taxes"]
+quandl_data["Fiscal_Year"] = range(len(quandl_data.index))
 ```
 
 
@@ -133,7 +165,7 @@ graph <- graph + xyplot(Corporation.Income.Taxes ~ Fiscal.Year,
                         type = c("b"),
                         col = "#AD3333")
 
-# Create pretty theme
+# Create pretty theme, because who doesn't like a nice looking graph :-)
 my.theme <- within(trellis.par.get(), {           
   plot.line <- within(plot.line, {
     lwd <- 3
@@ -184,8 +216,25 @@ graph <- update(graph,
 print(graph)
 ```
 
-<img src="figure/plotBaseR.png" title="plot of chunk plotBaseR" alt="plot of chunk plotBaseR" style="display: block; margin: auto;" />
+<img src="figure/graphBaseR.png" title="plot of chunk graphBaseR" alt="plot of chunk graphBaseR" style="display: block; margin: auto;" />
 
+```python
+plt.figure(figsize=(12, 7))
+
+plt.plot(quandl_data["Fiscal_Year"], quandl_data["Individual_Income_Taxes"], marker="o", color="#00526D", lw=2)
+plt.plot(quandl_data["Fiscal_Year"], quandl_data["Corporation_Income_Taxes"], marker="o", color="#AD3333", lw=2)
+
+plt.xlabel("Fiscal Year", fontsize=16)
+plt.ylabel("Income taxes (% of GDP)", fontsize=16)
+
+plt.xlim(-1, 69)
+plt.xticks(quandl_data["Fiscal_Year"][5::10], quandl_data.index[5::10].year)
+
+plt.grid()
+```
+
+
+<center> ![](figurePy/graphBasePy.png) </center>
 
 The first thing one can notice in this graph is the clear decreasing trend of
 the corporations' income taxes: since 1945, they have dropped from about 7\% 
@@ -193,7 +242,7 @@ of the GDP to less than 2\%. On the contrary, the individuals' contribution
 to the income taxes seems to have remained stable around 8\% of the GDP, with
 maybe a slight general increase over time. Also there seems to be correlated 
 fluctuations, with several successive years of increase or decrease probably 
-due to the prolonged action of successive governments, and the intensity of 
+due to the prolonged action of successive governments. The intensity of 
 these fluctuations seems uneven along the considered time period. Finally the
 corporations' income taxes seem to decrease linearly (more or less) until the
 mid-80's but do not seem to change much after that. These three elements 
@@ -215,8 +264,22 @@ model.ind <- lm(Individual.Income.Taxes ~ Fiscal.Year, data = my.data)
 model.corp <- lm(Corporation.Income.Taxes ~ Fiscal.Year, data = my.data)
 ```
 
+```python
+# Fit a linear regression to the individual income taxes time series
+individual_regression = sm.OLS.from_formula("Individual_Income_Taxes ~ Fiscal_Year", quandl_data).fit()
 
-Now let's have a look to the summary statistics of each fitted model. 
+# Fit a linear regression to the corporation income taxes time series
+corporation_regression = sm.OLS.from_formula("Corporation_Income_Taxes ~ Fiscal_Year", quandl_data).fit()
+```
+
+
+Now let's have a look to the summary statistics of each fitted model. We will
+display the R output only to keep things simple. However if you decide to 
+look at the Python output, the result of the regression might look a bit 
+different because it seems that R and Python handle dates in a different way 
+(R treats the dates as days in this case, Python as years). 
+
+First, the model for individuals' income taxes:
 
 
 
@@ -246,6 +309,15 @@ summary(model.ind)
 ## F-statistic: 3.73 on 1 and 67 DF,  p-value: 0.0575
 ```
 
+```python
+print individual_regression.summary()
+```
+
+
+Then, the model for corporations' income taxes:
+
+
+
 ```r
 # Summary statistics for corporation income taxes model
 summary(model.corp)
@@ -270,6 +342,10 @@ summary(model.corp)
 ## Residual standard error: 0.737 on 67 degrees of freedom
 ## Multiple R-squared:  0.711,	Adjusted R-squared:  0.706 
 ## F-statistic:  164 on 1 and 67 DF,  p-value: <2e-16
+```
+
+```python
+print corporation_regression.summary()
 ```
 
 
@@ -300,7 +376,7 @@ predicted by each model for different dates. We will choose dates that cover
 the whole studied period (1945-2013), plus a little extra on both ends (10\%)
 to make the graph more aesthetically pleasing (*i.e.*, the models'
 predictions will cover a larger time period than the x-axis limits of the
-graph).
+graph). 
 
 
 
@@ -312,17 +388,35 @@ new.data <- data.frame(Fiscal.Year = seq.Date(from = as.Date("1945-12-31") - 0.1
                                               by = "years"))
 
 # Compute model predictions (values + confidence intervals) for new dates
+# Model of individual income taxes
 predict.ind <- within(new.data, {
   Predictions <- as.data.frame(predict(model.ind, 
                                        newdata = new.data,
                                        interval = "confidence"))
 })
 
+# Model of corporation income taxes
 predict.corp <- within(new.data, {
   Predictions <- as.data.frame(predict(model.corp, 
                                        newdata = new.data,
                                        interval = "confidence"))
 })
+```
+
+```python
+# Predict the 95% confidence bands for the regression
+individual_prstd, individual_iv_l, individual_iv_u = wls_prediction_std(individual_regression)
+individual_st, individual_data, individual_ss2 = summary_table(individual_regression, alpha=0.05)
+
+individual_fitted_values = individual_data[:, 2]
+individual_predict_mean_ci_low, individual_predict_mean_ci_upper = individual_data[:, 4:6].T
+
+# Predict the 95% confidence bands for the regression
+corporation_prstd, corporation_iv_l, corporation_iv_u = wls_prediction_std(corporation_regression)
+corporation_st, corporation_data, corporation_ss2 = summary_table(corporation_regression, alpha=0.05)
+
+corporation_fitted_values = corporation_data[:, 2]
+corporation_predict_mean_ci_low, corporation_predict_mean_ci_upper = corporation_data[:, 4:6].T
 ```
 
 
@@ -364,8 +458,31 @@ graph <- graph + layer_(lpolygon(x = c(predict.corp$Fiscal.Year,
 print(graph)
 ```
 
-<img src="figure/plotPredictR.png" title="plot of chunk plotPredictR" alt="plot of chunk plotPredictR" style="display: block; margin: auto;" />
+<img src="figure/grapPredictR.png" title="plot of chunk grapPredictR" alt="plot of chunk grapPredictR" style="display: block; margin: auto;" />
 
+```python
+plt.plot(quandl_data["Fiscal_Year"],
+         individual_fitted_values,
+         color="#00526D", lw=2)
+
+plt.fill_between(quandl_data["Fiscal_Year"],
+                 individual_predict_mean_ci_low,
+                 individual_predict_mean_ci_upper,
+                 color="#00526D", alpha=0.2)
+
+plt.plot(quandl_data["Fiscal_Year"],
+         corporation_fitted_values,
+         color="#AD3333", lw=2)
+
+plt.fill_between(quandl_data["Fiscal_Year"],
+                 corporation_predict_mean_ci_low,
+                 corporation_predict_mean_ci_upper,
+                 color="#AD3333", alpha=0.2)
+;
+```
+
+
+<center> ![](figurePy/graphPredictPy.png) </center>
 
 And that's it for today! We hope that you enjoyed it and that you'll come back next time to find out more about running diagnotic tests and correcting potential errors on today's linear models. 
 

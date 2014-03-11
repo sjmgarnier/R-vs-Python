@@ -51,14 +51,30 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <span class="kw">require</span>(<span class="st">&quot;Quandl&quot;</span>)         <span class="co"># Functions to access Quandl&#39;s database</span>
 <span class="kw">require</span>(<span class="st">&quot;lattice&quot;</span>)        <span class="co"># Base graph functions</span>
 <span class="kw">require</span>(<span class="st">&quot;latticeExtra&quot;</span>)   <span class="co"># Layer graph functions</span></code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> Quandl</code></pre>
 <p>Now, let’s load the dataset from Quandl. You can find it on Quandl’s website <a href="http://www.quandl.com/TPC/HIST_RECEIPT-Historical-Source-of-Revenue-as-Share-of-GDP">here</a>. Among other things, this dataset contains the contributions of individuals and corporations to the income taxes, expressed as a fraction of the GDP. Its original source is the <a href="http://www.taxpolicycenter.org/">Tax Policy Center</a>. The dataset code at Quandl is “TPC/HIST_RECEIPT” and we will retrieve data from December 31, 1945, to December 31, 2013.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load data from Quandl</span>
 my.data &lt;-<span class="st"> </span><span class="kw">Quandl</span>(<span class="st">&quot;TPC/HIST_RECEIPT&quot;</span>, 
                   <span class="dt">start_date =</span> <span class="st">&quot;1945-12-31&quot;</span>, 
                   <span class="dt">end_date =</span> <span class="st">&quot;2013-12-31&quot;</span>)
 
-<span class="co"># The columns&#39; names contain spaces, make them syntactically valid</span>
+<span class="co"># Display first lines of the data frame</span>
+<span class="kw">head</span>(my.data)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">quandl_data = Quandl.get(<span class="st">&quot;TPC/HIST_RECEIPT&quot;</span>,
+                         trim_start=<span class="st">&quot;1945-12-31&quot;</span>,
+                         trim_end=<span class="st">&quot;2013-12-31&quot;</span>)
+
+quandl_data.head()</code></pre>
+<p>The column names from Quandl’s data frame contain spaces. We need to correct that before we can proceed with the rest of the analysis.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The columns&#39; names contain spaces, make them syntactically valid</span>
 <span class="kw">names</span>(my.data) &lt;-<span class="st"> </span><span class="kw">make.names</span>(<span class="kw">names</span>(my.data))</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">%matplotlib inline
+<span class="ch">import</span> matplotlib.pyplot <span class="ch">as</span> plt
+
+<span class="co"># Rename the columns we&#39;re using with underscores -- required for the linear regression</span>
+quandl_data[<span class="st">&quot;Individual_Income_Taxes&quot;</span>] = quandl_data[<span class="st">&quot;Individual Income Taxes&quot;</span>]
+quandl_data[<span class="st">&quot;Corporation_Income_Taxes&quot;</span>] = quandl_data[<span class="st">&quot;Corporation Income Taxes&quot;</span>]
+quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>] = <span class="dt">range</span>(<span class="dt">len</span>(quandl_data.index))</code></pre>
 <p>The dataset contains three columns of interest for us: individuals’ and corporations’ income taxes as a fraction of the GDP, and fiscal year. We will first plot the individuals’ and corporations’ income taxes as a function of the fiscal year to see what the data look like.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create graph object</span>
 graph &lt;-<span class="st"> </span><span class="kw">xyplot</span>(Individual.Income.Taxes ~<span class="st"> </span>Fiscal.Year, 
@@ -71,7 +87,7 @@ graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class=
                         <span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;b&quot;</span>),
                         <span class="dt">col =</span> <span class="st">&quot;#AD3333&quot;</span>)
 
-<span class="co"># Create pretty theme</span>
+<span class="co"># Create pretty theme, because who doesn&#39;t like a nice looking graph :-)</span>
 my.theme &lt;-<span class="st"> </span><span class="kw">within</span>(<span class="kw">trellis.par.get</span>(), {           
   plot.line &lt;-<span class="st"> </span><span class="kw">within</span>(plot.line, {
     lwd &lt;-<span class="st"> </span><span class="dv">3</span>
@@ -120,15 +136,37 @@ graph &lt;-<span class="st"> </span><span class="kw">update</span>(graph,
 
 <span class="co"># Print graph object</span>
 <span class="kw">print</span>(graph)</code></pre>
-<p><img src="figure/plotBaseR.png" title="plot of chunk plotBaseR" alt="plot of chunk plotBaseR" style="display: block; margin: auto;" /></p>
-<p>The first thing one can notice in this graph is the clear decreasing trend of the corporations’ income taxes: since 1945, they have dropped from about 7% of the GDP to less than 2%. On the contrary, the individuals’ contribution to the income taxes seems to have remained stable around 8% of the GDP, with maybe a slight general increase over time. Also there seems to be correlated fluctuations, with several successive years of increase or decrease probably due to the prolonged action of successive governments, and the intensity of these fluctuations seems uneven along the considered time period. Finally the corporations’ income taxes seem to decrease linearly (more or less) until the mid-80’s but do not seem to change much after that. These three elements (autocorrelation, heteroscedasticity and change in slope) will certainly raise flags in diagnostic tests but we will deal with them in another challenge. Today we want to focus on making and plotting simple linear regressions instead.</p>
+<p><img src="figure/graphBaseR.png" title="plot of chunk graphBaseR" alt="plot of chunk graphBaseR" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode python"><code class="sourceCode python">plt.figure(figsize=(<span class="dv">12</span>, <span class="dv">7</span>))
+
+plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>], quandl_data[<span class="st">&quot;Individual_Income_Taxes&quot;</span>], marker=<span class="st">&quot;o&quot;</span>, color=<span class="st">&quot;#00526D&quot;</span>, lw=<span class="dv">2</span>)
+plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>], quandl_data[<span class="st">&quot;Corporation_Income_Taxes&quot;</span>], marker=<span class="st">&quot;o&quot;</span>, color=<span class="st">&quot;#AD3333&quot;</span>, lw=<span class="dv">2</span>)
+
+plt.xlabel(<span class="st">&quot;Fiscal Year&quot;</span>, fontsize=<span class="dv">16</span>)
+plt.ylabel(<span class="st">&quot;Income taxes (</span><span class="ot">% o</span><span class="st">f GDP)&quot;</span>, fontsize=<span class="dv">16</span>)
+
+plt.xlim(-<span class="dv">1</span>, <span class="dv">69</span>)
+plt.xticks(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>][<span class="dv">5</span>::<span class="dv">10</span>], quandl_data.index[<span class="dv">5</span>::<span class="dv">10</span>].year)
+
+plt.grid()</code></pre>
+<center> 
+<img src="figurePy/graphBasePy.png" />
+</center>
+
+<p>The first thing one can notice in this graph is the clear decreasing trend of the corporations’ income taxes: since 1945, they have dropped from about 7% of the GDP to less than 2%. On the contrary, the individuals’ contribution to the income taxes seems to have remained stable around 8% of the GDP, with maybe a slight general increase over time. Also there seems to be correlated fluctuations, with several successive years of increase or decrease probably due to the prolonged action of successive governments. The intensity of these fluctuations seems uneven along the considered time period. Finally the corporations’ income taxes seem to decrease linearly (more or less) until the mid-80’s but do not seem to change much after that. These three elements (autocorrelation, heteroscedasticity and change in slope) will certainly raise flags in diagnostic tests but we will deal with them in another challenge. Today we want to focus on making and plotting simple linear regressions instead.</p>
 <p>First, let’s fit a linear model to the individual and corporation income taxes data.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fit individuals&#39; income taxes data</span>
 model.ind &lt;-<span class="st"> </span><span class="kw">lm</span>(Individual.Income.Taxes ~<span class="st"> </span>Fiscal.Year, <span class="dt">data =</span> my.data)
 
 <span class="co"># Fit corporations&#39; income taxes data</span>
 model.corp &lt;-<span class="st"> </span><span class="kw">lm</span>(Corporation.Income.Taxes ~<span class="st"> </span>Fiscal.Year, <span class="dt">data =</span> my.data)</code></pre>
-<p>Now let’s have a look to the summary statistics of each fitted model.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Fit a linear regression to the individual income taxes time series</span>
+individual_regression = sm.OLS.from_formula(<span class="st">&quot;Individual_Income_Taxes ~ Fiscal_Year&quot;</span>, quandl_data).fit()
+
+<span class="co"># Fit a linear regression to the corporation income taxes time series</span>
+corporation_regression = sm.OLS.from_formula(<span class="st">&quot;Corporation_Income_Taxes ~ Fiscal_Year&quot;</span>, quandl_data).fit()</code></pre>
+<p>Now let’s have a look to the summary statistics of each fitted model. We will display the R output only to keep things simple. However if you decide to look at the Python output, the result of the regression might look a bit different because it seems that R and Python handle dates in a different way (R treats the dates as days in this case, Python as years).</p>
+<p>First, the model for individuals’ income taxes:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Summary statistics for individual income taxes model</span>
 <span class="kw">summary</span>(model.ind)</code></pre>
 <pre><code>## 
@@ -149,6 +187,8 @@ model.corp &lt;-<span class="st"> </span><span class="kw">lm</span>(Corporation.
 ## Residual standard error: 0.806 on 67 degrees of freedom
 ## Multiple R-squared:  0.0528, Adjusted R-squared:  0.0387 
 ## F-statistic: 3.73 on 1 and 67 DF,  p-value: 0.0575</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> individual_regression.summary()</code></pre>
+<p>Then, the model for corporations’ income taxes:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Summary statistics for corporation income taxes model</span>
 <span class="kw">summary</span>(model.corp)</code></pre>
 <pre><code>## 
@@ -169,6 +209,7 @@ model.corp &lt;-<span class="st"> </span><span class="kw">lm</span>(Corporation.
 ## Residual standard error: 0.737 on 67 degrees of freedom
 ## Multiple R-squared:  0.711,  Adjusted R-squared:  0.706 
 ## F-statistic:  164 on 1 and 67 DF,  p-value: &lt;2e-16</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> corporation_regression.summary()</code></pre>
 <p>What do we see? For the individual income taxes, we see a small, positive increase of +2.579e-05% of GDP per day (R treats dates as days). Over the whole 1945 to 2013 period, this corresponds to a total increase of +0.64% of GDP, <em>i.e.</em> a +8.4% global increase in the contribution of individuals to income taxes. However this increase is only marginally significant (p = 0.0575), therefore we can consider that the contribution of individuals to the income taxes has remained fairly stable during the 7 decades since WWII.</p>
 <p>We have a very different story for the corporation income taxes. The linear model shows a strongly significant (p &lt; 2e-16) decrease of -1.564e-04% of GDP per day. Over the 1945-2013 period, this corresponds to a total decrease of -3.88% of GDP, <em>i.e.</em> a -80.1% global decrease in the contribution of corporations to income taxes.</p>
 <p>Of course, we need to be very cautious in the interpretation of these results because the linear models we have fitted to the data do not take into account the potential sources of error that we have identified earlier. We will see next time how we can evaluate them, and correct them if necessary.</p>
@@ -181,17 +222,32 @@ new.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
                                               <span class="dt">by =</span> <span class="st">&quot;years&quot;</span>))
 
 <span class="co"># Compute model predictions (values + confidence intervals) for new dates</span>
+<span class="co"># Model of individual income taxes</span>
 predict.ind &lt;-<span class="st"> </span><span class="kw">within</span>(new.data, {
   Predictions &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">predict</span>(model.ind, 
                                        <span class="dt">newdata =</span> new.data,
                                        <span class="dt">interval =</span> <span class="st">&quot;confidence&quot;</span>))
 })
 
+<span class="co"># Model of corporation income taxes</span>
 predict.corp &lt;-<span class="st"> </span><span class="kw">within</span>(new.data, {
   Predictions &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">predict</span>(model.corp, 
                                        <span class="dt">newdata =</span> new.data,
                                        <span class="dt">interval =</span> <span class="st">&quot;confidence&quot;</span>))
 })</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Predict the 95% confidence bands for the regression</span>
+individual_prstd, individual_iv_l, individual_iv_u = wls_prediction_std(individual_regression)
+individual_st, individual_data, individual_ss2 = summary_table(individual_regression, alpha=<span class="fl">0.05</span>)
+
+individual_fitted_values = individual_data[:, <span class="dv">2</span>]
+individual_predict_mean_ci_low, individual_predict_mean_ci_upper = individual_data[:, <span class="dv">4</span>:<span class="dv">6</span>].T
+
+<span class="co"># Predict the 95% confidence bands for the regression</span>
+corporation_prstd, corporation_iv_l, corporation_iv_u = wls_prediction_std(corporation_regression)
+corporation_st, corporation_data, corporation_ss2 = summary_table(corporation_regression, alpha=<span class="fl">0.05</span>)
+
+corporation_fitted_values = corporation_data[:, <span class="dv">2</span>]
+corporation_predict_mean_ci_low, corporation_predict_mean_ci_upper = corporation_data[:, <span class="dv">4</span>:<span class="dv">6</span>].T</code></pre>
 <p>And finally, we will add to the data plot the predicted values as a line and the confidence intervals of the predicted values as a polygon.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add predicted values for model of individual income taxes </span>
 graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class="kw">xyplot</span>(Predictions$fit ~<span class="st"> </span>Fiscal.Year, 
@@ -223,7 +279,29 @@ graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class=
 
 <span class="co"># Reprint graph object</span>
 <span class="kw">print</span>(graph)</code></pre>
-<p><img src="figure/plotPredictR.png" title="plot of chunk plotPredictR" alt="plot of chunk plotPredictR" style="display: block; margin: auto;" /></p>
+<p><img src="figure/grapPredictR.png" title="plot of chunk grapPredictR" alt="plot of chunk grapPredictR" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode python"><code class="sourceCode python">plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>],
+         individual_fitted_values,
+         color=<span class="st">&quot;#00526D&quot;</span>, lw=<span class="dv">2</span>)
+
+plt.fill_between(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>],
+                 individual_predict_mean_ci_low,
+                 individual_predict_mean_ci_upper,
+                 color=<span class="st">&quot;#00526D&quot;</span>, alpha=<span class="fl">0.2</span>)
+
+plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>],
+         corporation_fitted_values,
+         color=<span class="st">&quot;#AD3333&quot;</span>, lw=<span class="dv">2</span>)
+
+plt.fill_between(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>],
+                 corporation_predict_mean_ci_low,
+                 corporation_predict_mean_ci_upper,
+                 color=<span class="st">&quot;#AD3333&quot;</span>, alpha=<span class="fl">0.2</span>)
+;</code></pre>
+<center> 
+<img src="figurePy/graphPredictPy.png" />
+</center>
+
 <p>And that’s it for today! We hope that you enjoyed it and that you’ll come back next time to find out more about running diagnotic tests and correcting potential errors on today’s linear models.</p>
 <hr />
 <h4 id="source-code">3 - Source code</h4>
