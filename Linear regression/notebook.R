@@ -234,8 +234,8 @@ print(graph)
 #+ graphBasePy, eval=FALSE, engine="python"
 plt.figure(figsize=(12, 7))
 
-plt.plot(quandl_data["Fiscal_Year"], quandl_data["Individual_Income_Taxes"], marker="o", color="#00526D", lw=2)
-plt.plot(quandl_data["Fiscal_Year"], quandl_data["Corporation_Income_Taxes"], marker="o", color="#AD3333", lw=2)
+plt.plot(quandl_data["Fiscal_Year"], quandl_data["Individual_Income_Taxes"], marker="o", color="#00526D", lw=2, label="Individuals")
+plt.plot(quandl_data["Fiscal_Year"], quandl_data["Corporation_Income_Taxes"], marker="o", color="#AD3333", lw=2, label="Corporations")
 
 plt.xlabel("Fiscal Year", fontsize=16)
 plt.ylabel("Income taxes (% of GDP)", fontsize=16)
@@ -244,6 +244,8 @@ plt.xlim(-1, 69)
 plt.xticks(quandl_data["Fiscal_Year"][5::10], quandl_data.index[5::10].year)
 
 plt.grid()
+
+plt.legend(loc="upper left");
 
 #' <center> ![](figurePy/graphBasePy.png) </center>
 #' 
@@ -430,7 +432,8 @@ plt.fill_between(quandl_data["Fiscal_Year"],
                  corporation_predict_mean_ci_low,
                  corporation_predict_mean_ci_upper,
                  color="#AD3333", alpha=0.2)
-;
+
+plt.legend(loc="upper left");
 
 #' <center> ![](figurePy/graphPredictPy.png) </center>
 #'
