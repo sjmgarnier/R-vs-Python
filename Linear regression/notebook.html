@@ -139,8 +139,8 @@ graph &lt;-<span class="st"> </span><span class="kw">update</span>(graph,
 <p><img src="figure/graphBaseR.png" title="plot of chunk graphBaseR" alt="plot of chunk graphBaseR" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode python"><code class="sourceCode python">plt.figure(figsize=(<span class="dv">12</span>, <span class="dv">7</span>))
 
-plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>], quandl_data[<span class="st">&quot;Individual_Income_Taxes&quot;</span>], marker=<span class="st">&quot;o&quot;</span>, color=<span class="st">&quot;#00526D&quot;</span>, lw=<span class="dv">2</span>)
-plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>], quandl_data[<span class="st">&quot;Corporation_Income_Taxes&quot;</span>], marker=<span class="st">&quot;o&quot;</span>, color=<span class="st">&quot;#AD3333&quot;</span>, lw=<span class="dv">2</span>)
+plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>], quandl_data[<span class="st">&quot;Individual_Income_Taxes&quot;</span>], marker=<span class="st">&quot;o&quot;</span>, color=<span class="st">&quot;#00526D&quot;</span>, lw=<span class="dv">2</span>, label=<span class="st">&quot;Individuals&quot;</span>)
+plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>], quandl_data[<span class="st">&quot;Corporation_Income_Taxes&quot;</span>], marker=<span class="st">&quot;o&quot;</span>, color=<span class="st">&quot;#AD3333&quot;</span>, lw=<span class="dv">2</span>, label=<span class="st">&quot;Corporations&quot;</span>)
 
 plt.xlabel(<span class="st">&quot;Fiscal Year&quot;</span>, fontsize=<span class="dv">16</span>)
 plt.ylabel(<span class="st">&quot;Income taxes (</span><span class="ot">% o</span><span class="st">f GDP)&quot;</span>, fontsize=<span class="dv">16</span>)
@@ -148,7 +148,9 @@ plt.ylabel(<span class="st">&quot;Income taxes (</span><span class="ot">% o</spa
 plt.xlim(-<span class="dv">1</span>, <span class="dv">69</span>)
 plt.xticks(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>][<span class="dv">5</span>::<span class="dv">10</span>], quandl_data.index[<span class="dv">5</span>::<span class="dv">10</span>].year)
 
-plt.grid()</code></pre>
+plt.grid()
+
+plt.legend(loc=<span class="st">&quot;upper left&quot;</span>);</code></pre>
 <center> 
 <img src="figurePy/graphBasePy.png" />
 </center>
@@ -267,19 +269,22 @@ graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class=
                                  <span class="dt">y =</span> <span class="kw">c</span>(predict.ind$Predictions$upr, 
                                        <span class="kw">rev</span>(predict.ind$Predictions$lwr)),
                                  <span class="dt">col =</span> <span class="st">&quot;#00526D25&quot;</span>, 
-                                 <span class="dt">border =</span> <span class="st">&quot;#00526D75&quot;</span>))
-
+                                 <span class="dt">border =</span> <span class="st">&quot;#00526D75&quot;</span>))</code></pre>
+<pre><code>## Error: attempt to apply non-function</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">
 <span class="co"># Add confidence polygon for model of corporation income taxes </span>
 graph &lt;-<span class="st"> </span>graph +<span class="st"> </span><span class="kw">layer_</span>(<span class="kw">lpolygon</span>(<span class="dt">x =</span> <span class="kw">c</span>(predict.corp$Fiscal.Year, 
                                        <span class="kw">rev</span>(predict.corp$Fiscal.Year)),
                                  <span class="dt">y =</span> <span class="kw">c</span>(predict.corp$Predictions$upr, 
                                        <span class="kw">rev</span>(predict.corp$Predictions$lwr)),
                                  <span class="dt">col =</span> <span class="st">&quot;#AD333325&quot;</span>, 
-                                 <span class="dt">border =</span> <span class="st">&quot;#AD333375&quot;</span>))
-
+                                 <span class="dt">border =</span> <span class="st">&quot;#AD333375&quot;</span>))</code></pre>
+<pre><code>## Error: attempt to apply non-function</code></pre>
+<p><img src="figure/graphPredictR1.png" title="plot of chunk graphPredictR" alt="plot of chunk graphPredictR" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r">
 <span class="co"># Reprint graph object</span>
 <span class="kw">print</span>(graph)</code></pre>
-<p><img src="figure/graphPredictR.png" title="plot of chunk graphPredictR" alt="plot of chunk graphPredictR" style="display: block; margin: auto;" /></p>
+<p><img src="figure/graphPredictR2.png" title="plot of chunk graphPredictR" alt="plot of chunk graphPredictR" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode python"><code class="sourceCode python">plt.plot(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>],
          individual_fitted_values,
          color=<span class="st">&quot;#00526D&quot;</span>, lw=<span class="dv">2</span>)
@@ -297,7 +302,8 @@ plt.fill_between(quandl_data[<span class="st">&quot;Fiscal_Year&quot;</span>],
                  corporation_predict_mean_ci_low,
                  corporation_predict_mean_ci_upper,
                  color=<span class="st">&quot;#AD3333&quot;</span>, alpha=<span class="fl">0.2</span>)
-;</code></pre>
+
+plt.legend(loc=<span class="st">&quot;upper left&quot;</span>);</code></pre>
 <center> 
 <img src="figurePy/graphPredictPy.png" />
 </center>

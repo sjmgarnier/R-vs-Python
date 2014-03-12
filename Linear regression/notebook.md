@@ -225,8 +225,8 @@ print(graph)
 ```python
 plt.figure(figsize=(12, 7))
 
-plt.plot(quandl_data["Fiscal_Year"], quandl_data["Individual_Income_Taxes"], marker="o", color="#00526D", lw=2)
-plt.plot(quandl_data["Fiscal_Year"], quandl_data["Corporation_Income_Taxes"], marker="o", color="#AD3333", lw=2)
+plt.plot(quandl_data["Fiscal_Year"], quandl_data["Individual_Income_Taxes"], marker="o", color="#00526D", lw=2, label="Individuals")
+plt.plot(quandl_data["Fiscal_Year"], quandl_data["Corporation_Income_Taxes"], marker="o", color="#AD3333", lw=2, label="Corporations")
 
 plt.xlabel("Fiscal Year", fontsize=16)
 plt.ylabel("Income taxes (% of GDP)", fontsize=16)
@@ -235,6 +235,8 @@ plt.xlim(-1, 69)
 plt.xticks(quandl_data["Fiscal_Year"][5::10], quandl_data.index[5::10].year)
 
 plt.grid()
+
+plt.legend(loc="upper left");
 ```
 
 
@@ -450,6 +452,13 @@ graph <- graph + layer_(lpolygon(x = c(predict.ind$Fiscal.Year,
                                        rev(predict.ind$Predictions$lwr)),
                                  col = "#00526D25", 
                                  border = "#00526D75"))
+```
+
+```
+## Error: attempt to apply non-function
+```
+
+```r
 
 # Add confidence polygon for model of corporation income taxes 
 graph <- graph + layer_(lpolygon(x = c(predict.corp$Fiscal.Year, 
@@ -458,12 +467,21 @@ graph <- graph + layer_(lpolygon(x = c(predict.corp$Fiscal.Year,
                                        rev(predict.corp$Predictions$lwr)),
                                  col = "#AD333325", 
                                  border = "#AD333375"))
+```
+
+```
+## Error: attempt to apply non-function
+```
+
+<img src="figure/graphPredictR1.png" title="plot of chunk graphPredictR" alt="plot of chunk graphPredictR" style="display: block; margin: auto;" />
+
+```r
 
 # Reprint graph object
 print(graph)
 ```
 
-<img src="figure/graphPredictR.png" title="plot of chunk graphPredictR" alt="plot of chunk graphPredictR" style="display: block; margin: auto;" />
+<img src="figure/graphPredictR2.png" title="plot of chunk graphPredictR" alt="plot of chunk graphPredictR" style="display: block; margin: auto;" />
 
 ```python
 plt.plot(quandl_data["Fiscal_Year"],
@@ -483,7 +501,8 @@ plt.fill_between(quandl_data["Fiscal_Year"],
                  corporation_predict_mean_ci_low,
                  corporation_predict_mean_ci_upper,
                  color="#AD3333", alpha=0.2)
-;
+
+plt.legend(loc="upper left");
 ```
 
 
