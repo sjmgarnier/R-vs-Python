@@ -17,7 +17,8 @@ If not, see http://www.gnu.org/licenses/.
 """
 
 # This starts the IPython Notebook pylab module, useful for plotting and interactive scientific computing
-%pylab inline
+import matplotlib.pyplot as plt
+import numpy as np
 from pandas import read_csv
 
 # Read the data into a pandas DataFrame
@@ -39,7 +40,7 @@ full_title = []
 for film, year in zip(body_count_data["Film"].values, body_count_data["Year"].values):
     full_title.append(film + " (" + str(year) + ")")
     
-body_count_data["Full_Title"] = array(full_title)
+body_count_data["Full_Title"] = np.array(full_title)
 
 fig = plt.figure(figsize=(8,12))
 
@@ -69,15 +70,15 @@ def autolabel(rects):
 autolabel(rects)
 
 # Add the film labels to left of the bars (y-axis)
-yticks(range(len(body_count_data["Full_Title"])), body_count_data["Full_Title"].values, fontsize=14)
+plt.yticks(range(len(body_count_data["Full_Title"])), body_count_data["Full_Title"].values, fontsize=14)
 
 # Don't have any x tick labels
-xticks(arange(0, 5, 1), [""])
+plt.xticks(np.arange(0, 5, 1), [""])
 
 # Plot styling
 
 # Remove the plot frame lines
-ax = axes()
+ax = plt.axes()
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 ax.spines["left"].set_visible(False)
@@ -96,4 +97,4 @@ ax.xaxis.grid(color="white", linestyle="-")
 
 # Save the figure as a PNG
 # We can also save this as a PDF, JPG, TIFF, or most other image formats
-savefig("25-Violence-Packed-Films.png", bbox_inches="tight")
+plt.savefig("25-Violence-Packed-Films.png", bbox_inches="tight")
